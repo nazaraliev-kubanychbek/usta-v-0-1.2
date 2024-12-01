@@ -1,0 +1,345 @@
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+//   }
+// .cardpage {
+//         .company-info {
+//             padding-top: 120px; /* Увеличиваем отступ сверху */
+//             font-family: Arial, sans-serif;
+//             padding-left: 120px;
+          
+//             table {
+//               width: 100%;
+//               border-collapse: collapse;
+          
+//               td {
+//                 padding: 12px; /* Увеличиваем отступы в ячейках */
+//                 border-bottom: 2px solid #ccc; /* Увеличиваем толщину границы */
+          
+//                 font-size: 18px; /* Увеличиваем размер шрифта */
+//                 line-height: 1.6; /* Увеличиваем межстрочный интервал для лучшей читаемости */
+          
+//                 &:first-child {
+//                   font-weight: bold; /* Для заголовков строк */
+//                   width: 70%; /* Увеличиваем ширину первой колонки */
+//                 }
+          
+//                 &:last-child {
+//                   text-align: left;
+//                 }
+//               }
+//             }
+//           }
+          
+    
+//   }
+  
+// .main-screen{
+//     background-image: url(".//CardImages/CardImage.png");
+//     width: 100%;
+//     // max-width: 100vh; 
+//     height: 100vh;
+//     background-size: cover;
+    
+// }
+// .main-screen-text{
+//     // text-align: ;
+//     font-family: Helvetica;
+//     padding-top: 480px;
+//     padding-left: 130px;
+//     color: #ccc;
+// }
+
+
+// // .images-cardpage{
+// //     margin-top: 100px;
+// //     width: 100%;
+// //     margin-left: 100px;
+// // }
+
+// .images-cardpage {
+//     margin-top: 90px;
+
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 50px; /* Отступы между элементами */
+// }
+
+// .image-item {
+//   // margin-top: 90px;
+//   display: flex;
+//   margin-left: 140px;
+//   // align-items: center; /* Выравнивание по вертикали */
+//   // justify-content: flex-start;
+//   gap: 15px; /* Отступ между изображением и текстом */
+//   width: 100%; /* Можно задать фиксированную ширину или проценты для адаптивности */
+// }
+
+// .image-item img {
+//   max-width: 400px; /* Ширина изображения, можно подкорректировать */
+//   height: auto; /* Чтобы сохранить пропорции */
+// }
+
+// .image-content {
+//   text-align: left;
+// }
+
+// .images-cardpage-title {
+//   font-family: Helvetica;
+//   font-size: 1.2rem;
+//   font-weight: bold;
+// }
+
+// .images-cardpage-description {
+//   font-family: Helvetica;
+//   font-size: 1rem;
+//   margin: 10px 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardpage {
+  .company-info {
+      padding-top: 120px; /* Увеличиваем отступ сверху */
+    font-family: Arial, sans-serif;
+    padding-left: 120px;
+    @media (max-width: 576px){
+      padding-left: 20px;
+      padding-top: 250px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        padding: 12px;
+        border-bottom: 2px solid #ccc;
+        font-size: 18px;
+        line-height: 1.6;
+
+        &:first-child {
+          font-weight: bold;
+          width: 70%;
+        }
+
+        &:last-child {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.main-screen {
+  background-image: url(".//CardImages/CardImage.png");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  @media (max-width: 576px){
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.main-screen-text {
+  font-family: Helvetica;
+  padding-top: 480px;
+  padding-left: 130px;
+  color: #ccc;
+  @media (max-width: 576px) {
+    margin-top: 50px;
+    padding-left: 20px;
+    color: #000000;
+     font-size:13px; /* Уменьшите значение для меньшего текста */
+}
+
+}
+// .main-screen {
+//   background-image: url(".//CardImages/CardImage.png");
+//   width: 100%;
+//   height: 100vh;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;  /* Выравнивание по центру */
+
+//   @media (max-width: 576px) {
+//     max-height: 450px;  /* Высота изображения на маленьких экранах */
+//     max-width: 800px;
+//   }
+// }
+
+// .main-screen-text {
+//   font-family: Helvetica;
+//   color: #ccc;
+//   margin-top: 20px;  /* Отступ от изображения */
+  
+//   @media (max-width: 576px) {
+//     margin-top: 500px;  /* Уменьшаем отступ сверху на мобильных устройствах */
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.images-cardpage {
+  margin-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  @media (max-width: 576px){
+  }
+}
+
+.image-item {
+  display: flex;
+  margin-left: 140px;
+  gap: 15px;
+  width: 100%;
+  flex-direction: row; /* Горизонтальное размещение по умолчанию */
+}
+
+.image-item img {
+  max-width: 400px;
+  height: auto;
+}
+
+.image-content {
+  text-align: left;
+}
+
+.images-cardpage-title {
+  font-family: Helvetica;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.images-cardpage-description {
+  font-family: Helvetica;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+/* Адаптивные стили для разных экранов */
+
+/* Для экрана шириной 1024px */
+@media (max-width: 1024px) {
+  .images-cardpage {
+    gap: 30px;
+  }
+
+  .image-item img {
+    max-width: 300px;
+  }
+
+  .images-cardpage-title {
+    font-size: 1rem;
+  }
+
+  .images-cardpage-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Для экрана шириной 992px */
+@media (max-width: 992px) {
+  .images-cardpage {
+    gap: 20px;
+  }
+
+  .image-item img {
+    max-width: 250px;
+  }
+
+  .images-cardpage-title {
+    font-size: 1rem;
+  }
+
+  .images-cardpage-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Для экрана шириной 768px */
+@media (max-width: 768px) {
+  .images-cardpage {
+    gap: 15px;
+  }
+
+  .image-item img {
+    max-width: 200px;
+  }
+
+  .images-cardpage-title {
+    font-size: 1rem;
+  }
+
+  .images-cardpage-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Для экрана шириной 576px */
+@media (max-width: 576px) {
+  .images-cardpage {
+    gap: 10px;
+    flex-direction: column; /* Меняем на вертикальное расположение */
+    // align-items: center; /* Выравнивание по центру */
+  }
+
+  .image-item {
+    flex-direction: column; /* Вертикальное расположение изображения и текста */
+    margin-left: 0; /* Убираем отступы */
+  }
+
+  .image-item img {
+    max-width: 480px; /* Увеличиваем размер изображения */
+  }
+
+  .images-cardpage-title {
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+
+  .images-cardpage-description {
+    margin-left: 20px;
+    font-size: 0.9rem;
+  }
+}
+

@@ -1,0 +1,154 @@
+
+
+
+
+
+
+.community {
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        
+        .content-head {
+            margin-bottom: 100px;
+            width: 1320px;
+            
+            margin: 50px auto;
+            margin-bottom: 200px;
+            &-h1 {
+                //styleName: Desktop Типографика/Заголовок 1;
+                font-family: Helvetica;
+                font-size: 60px;
+                font-weight: 400;
+                line-height: 60px;
+                letter-spacing: -0.04em;
+                text-align: left;
+                color: #ffffff;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+
+            }
+            &-p {
+                font-family: Helvetica;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: -0.08em;
+                text-align: left;
+                color: #ffffff;
+                width: 650px;
+    
+            }
+        }
+
+    }
+
+    
+}
+
+@media screen and (max-width: 1400px) {
+    .content-head {
+      max-width: 1140px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .content-head {
+      max-width: 960px;
+    }
+  }
+
+
+
+
+@media screen and (max-width: 992px) {
+    .community {
+        .banner {
+            height: 70vh;
+            .content-head {
+                
+                max-width: 720px;
+
+                &-h1 {
+                    font-family: Helvetica;
+                    font-size: 40px;
+                    font-weight: 400;
+                    line-height: 40px;
+                    letter-spacing: -0.06em;
+                    text-align: left;
+
+                }
+                &-p {
+                    font-family: Helvetica;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    letter-spacing: -0.04em;
+                    text-align: left;
+                    width: 500px;
+                }
+            }
+        }
+    }
+  
+}
+@media screen and (max-width: 768px) {
+    .community {
+        .banner {
+            height: 100vh;
+            .content-head {
+                max-width: 540px;
+            }
+            
+        }
+
+    }
+  
+  
+}
+@media screen and (max-width: 576px) {
+    .community {
+        .margin-top-for-community {
+            margin-top: 170px;
+        }
+        .banner {
+            height: 50vh;
+            margin-bottom: 150px;
+            .content-head {
+                margin-bottom: -160px;
+                &-h1 {
+                    font-family: Helvetica;
+                    font-size: 34px;
+                    font-weight: 550;
+                    line-height: 34px;
+                    letter-spacing: -0.04em;
+                    text-align: left;
+                    color: black;
+
+                    
+
+                }
+                &-p {
+                    font-family: Helvetica;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 14px;
+                    letter-spacing: -0.04em;
+                    text-align: left;
+                    color: rgba(0, 0, 0, 0.555);
+                    
+                    width: 320px;
+                }
+            }
+        }
+    }
+
+  
+}

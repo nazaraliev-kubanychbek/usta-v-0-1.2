@@ -1,0 +1,122 @@
+
+
+
+
+
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .img-click-for-slider-left {
+    transform: rotate(180deg);
+  }
+  .img-click-for-slider:active, .img-click-for-slider:hover {
+    opacity: 0.5; }
+
+    .img-click-for-slider img {
+      transition: filter 0.3s ease; /* Плавный переход */
+  }
+
+  .slider-button:hover img {
+      filter: grayscale(100%);
+  }
+
+  .slider-button:active img {
+      filter: grayscale(100%);
+  }
+
+  .slide-row {
+    display: flex;
+    gap: 25px;
+    transition: transform 5s ease; // плавная анимация при переходе
+  }
+
+  .slide-item {
+  //   text-align: left;
+  //   margin-bottom: 0px;
+    img{
+      width: 90%;
+      border-radius: 20px;
+    }
+    &-p {
+      font-family: Helvetica;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27.6px;
+      letter-spacing: -0.04em;
+      text-align: left;
+      margin-left: 5px;
+    }
+  }
+
+  .slider-button {
+    font-size: 42px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #515151;
+    margin-bottom: 10px;
+
+    &:active {
+      color: #51515180;
+    }
+  }
+
+  .btn-block {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    width: 100%;
+    padding: 10px;
+  }
+
+
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; // Отступ сверху для визуального разделения
+  }
+
+
+
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    .dot {
+      width: 10px; // Ширина круга
+      height: 10px; // Высота круга
+      border-radius: 50%; // Делает элемент круглым
+      background-color: #000; // Черный цвет
+      margin: 0 5px; // Отступ между кругами
+      cursor: pointer; // Указывает, что элемент кликабельный
+      transition: background-color 0.3s ease; // Плавный переход цвета при наведении
+
+      &.active {
+        background-color: #000000; // Цвет активного круга
+      }
+
+      &:hover {
+        background-color: #030303; // Изменение цвета при наведении
+      }
+    }
+    // Отступ сверху для визуального разделения
+  }
+  @media (max-width: 576px) {
+    .dots-container {
+      margin-top: 0;
+    }
+    // .slide-item {
+    //   margin-left: 30px;
+    // }
+    .slider-container{
+      max-width: 320px;
+    }
+  }

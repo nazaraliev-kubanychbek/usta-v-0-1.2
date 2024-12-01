@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0px;
+
+}
+.footer {
+    width: 80%;
+    
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выровняет элементы по левому краю */
+}
+
+.footer-col a {
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #000000;
+
+}
+
+
+.footer-col-logo {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы картинки могли переноситься на следующую строку, если места недостаточно */
+    gap: 10px; /* Расстояние между логотипами */
+    margin-top: 20px;
+}
+
+.logo-footer-col {
+    width: 50px; /* Примерные размеры логотипов, можно изменить по необходимости */
+}
+
+
+
+.nav {
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    text-decoration: none;    
+}
+.footer__nav ul {
+    column-count: 2; /* Делим элементы на 2 столбца */
+    column-gap: 20px; /* Задаем расстояние между столбцами */
+}
+
+
+
+.footer__nav li {
+    list-style: none; /* Убираем маркеры списка */
+    margin-bottom: 20px; /* Добавляем отступы между элементами */
+    margin-top: 0px;
+}
+
+.footer hr {
+    margin: auto;
+    width: 90%;
+    border: 1px solid #00000066;
+}
+
+.container-f {
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+}
+.nav-h1 {
+    margin-bottom: 10px;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 27.6px;
+    text-align: left;
+    
+}
+
+.nav:active, 
+.nav:focus,
+.nav:hover { /* Стили для активной ссылки */
+    color: #000000; /* Цвет для активной ссылки */
+    text-decoration: double;
+    border-bottom: 2px solid #000000;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    
+}

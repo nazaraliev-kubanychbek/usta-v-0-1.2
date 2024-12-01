@@ -1,0 +1,265 @@
+.education-page {
+	font-family: Arial, sans-serif;
+	color: #333;
+
+	.banner-box {
+		padding: 10px;
+	}
+
+	.education-banner {
+		background-image: url('../Education/img/educationH.png');
+		background-size: cover;
+		// background-repeat: no-repeat;
+		height: 100vh;
+		padding-top: 400px;
+
+		@media screen and (max-width: 576px) {
+			// position: fixed;
+            // top: 0;
+            //margin-top: 125px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 40vh;
+            background-image: url('../Education/img/educationH.png');
+            gap: 40px;
+
+		}
+
+	}
+
+	.education-body {
+
+		.container {
+			@media (max-width: 576px) {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				background-size: cover;
+				background-repeat: no-repeat;
+
+			}
+		}
+
+		& h1 {
+			color: #fff;
+			font-family: Helvetica;
+			font-size: 34px;
+			font-weight: 400;
+			line-height: 24px;
+
+			@media (max-width: 768px) {
+				width: 340px;
+				font-family: Helvetica;
+				font-size: 34px;
+				font-weight: 400;
+				line-height: 34px;
+				letter-spacing: -0.04em;
+			}
+
+			@media (max-width: 576px) {
+				display: none;
+			}
+		}
+
+
+		& p {
+			font-family: Helvetica;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 20px;
+			letter-spacing: -0.04em;
+			text-align: left;
+			color: #fff;
+			width: 600px;
+			margin-top: 20px;
+
+			@media (max-width: 768px) {
+				width: 340px;
+				font-family: Helvetica;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 20px;
+				letter-spacing: -0.04em;
+
+
+
+			}
+
+			@media (max-width: 576px) {
+				display: none;
+			}
+		}
+	}
+
+	.banner-title-mob {
+		display: none;
+
+		font-family: Helvetica;
+		font-size: 34px;
+		font-weight: 400;
+		line-height: 24px;
+
+		@media (max-width: 576px) {
+			display: block;
+			width: 340px;
+			font-family: Helvetica;
+			font-size: 34px;
+			font-weight: 400;
+			line-height: 34px;
+			letter-spacing: -0.04em;
+			color: black;
+		}
+
+		// @media (max-width: 576px) {
+		//   display: block;
+		// }
+	}
+
+	.banner-discription-mob {
+		font-family: Helvetica;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: -0.04em;
+		text-align: left;
+		display: none;
+		width: 600px;
+		margin-top: 20px;
+
+		@media (max-width: 576px) {
+			display: block;
+			width: 340px;
+			font-family: Helvetica;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			letter-spacing: -0.04em;
+			color: black;
+
+
+			// @media (max-width: 576px) {
+			//   display: block;
+			// }
+		}
+	}
+
+
+}
+
+
+
+
+.education-content-section {
+	margin-top: 80px;
+
+	.container {
+		@media (max-width: 576px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+		}
+	}
+
+}
+
+
+
+.education-content-item {
+	display: flex;
+	padding: 40px;
+	justify-content: center;
+
+
+	img {
+		width: 100%;
+		border-radius: 8px 8px 30px 30px;
+		height: 400px;
+		object-fit: cover;
+		padding: 0 0 20px 0;
+
+	}
+
+	.education-text {
+		width: 100%;
+
+
+	}
+
+	// .education-title,
+	.education-discription {
+		padding: 10px 0;
+	}
+
+	// .education-img{
+	//   padding: 0 0 20px 0;
+
+
+
+	// }
+
+	.education-title-desk,
+	.education-discription-desk,
+	.education-img-desk {
+		display: none;
+
+		@media (max-width: 576px) {
+			display: block;
+
+		}
+	}
+
+	.education-title-mob,
+	.education-discription-mob,
+	.education-img-mob {
+		@media (max-width: 576px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 576px) {
+		& {
+			width: 340px;
+			padding: 0px;
+			display: flex;
+			flex-direction: column;
+
+
+
+
+			.row2 {
+				display: flex;
+				flex-direction: column;
+
+				.col-6 {
+					display: flex;
+					flex-direction: column;
+					padding: 0px;
+					width: 100%;
+				}
+
+				&-reverse {
+					flex-direction: column-reverse;
+				}
+			}
+		}
+	}
+}
+
+.education-reactplayer {
+	width: 100% !important;
+	height: 400px !important;
+	padding-bottom: 20px;
+  
+	@media (max-width: 576px) {
+	  height: 200px !important;
+	}
+  }
+  

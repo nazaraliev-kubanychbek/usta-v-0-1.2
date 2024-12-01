@@ -1,0 +1,45 @@
+
+.row {
+    display: flex; /* Включает flexbox */
+    flex-wrap: wrap; /* Колонки будут переноситься на новую строку, если не помещаются */
+    margin-right: -15px; /* Отрицательные отступы справа */
+    margin-left: -15px;  /* Отрицательные отступы слева */
+  }
+  .col-6 {
+    width: 50%;      /* Колонка занимает 50% ширины родителя */
+    max-width: 50%;  /* Максимальная ширина также 50% */
+    padding-right: 15px; /* Внешний отступ справа */
+    padding-left: 15px;  /* Внешний отступ слева */
+  }
+  
+
+.col-card{
+    display: flex;
+    margin-top: 20px;
+    
+    width: 100%;
+}
+
+.title-h1 {
+    font-family: Helvetica;
+    font-size: 35px;
+    font-weight: 550;
+    line-height: 41.4px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+.title-p {
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 19.8px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #00000080;
+
+}
+.col-6 img {
+    width: 100%;
+}

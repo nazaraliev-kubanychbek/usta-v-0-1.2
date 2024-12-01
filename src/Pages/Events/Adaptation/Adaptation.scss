@@ -1,0 +1,284 @@
+
+.video-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+
+
+  &-1,
+  &-2 {
+    h1{
+      margin-bottom: 20px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    .col-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 10px;
+      // Убедитесь, что текст не выходит за пределы блока
+      word-wrap: break-word;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-height: 370px;
+      }
+    }
+
+    .text-video {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+
+      .title-text-video {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 100px;
+        word-wrap: break-word; // Чтобы заголовок не ломался
+      }
+
+      .text-video-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333;
+        word-wrap: break-word; // Чтобы описание не выходило за пределы
+      }
+    }
+  }
+
+  // Для экранов больше 992px (по умолчанию)
+  @media (min-width: 992px) {
+    &-1 {
+      .col-6 {
+        &:first-child {
+          order: 1; // Текст слева
+        }
+
+        &:last-child {
+          order: 2; // Изображение справа
+        }
+      }
+    }
+
+    &-2 {
+      .col-6 {
+        &:first-child {
+          order: 2; // Изображение слева
+        }
+
+        &:last-child {
+          order: 1; // Текст справа
+        }
+      }
+    }
+  }
+
+  // Для экранов от 576px до 992px
+  @media (min-width: 576px) and (max-width: 992px) {
+    &-1 {
+      .col-6 {
+        &:first-child {
+          order: 1; // Текст слева
+        }
+
+        &:last-child {
+          order: 2; // Изображение справа
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+    }
+
+    &-2 {
+      .col-6 {
+        &:first-child {
+          order: 2; // Изображение слева
+        }
+
+        &:last-child {
+          order: 1; // Текст справа
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+
+  // Для экранов меньше 576px
+  @media (max-width: 576px) {
+    &-1,
+    &-2 {
+      .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: auto;
+          max-height: 250px;
+          margin: 0;
+        }
+      }
+
+      .text-video {
+        padding: 15px;
+
+        .title-text-video {
+          font-size: 1.2rem;
+        }
+
+        .text-video-description {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+// .banner-images {
+//   height: 40vh;
+//   margin-bottom: 400px;
+// }
+.banner-images img {
+    display: flex;
+    object-fit: cover;
+    flex-direction: column;
+    align-content: end;
+    justify-content: end;
+    width: 100%;
+    max-height: 740px;
+    // height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 576px) {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 40vh;
+            gap: 40px;
+            margin-bottom: 20px;
+
+    }
+}
+
+.photo-events {
+  
+    .photo-events-container {
+      display: flex; /* Используем flex для горизонтального размещения */
+      gap: 15px;
+    //   margin-top: 20px;
+      overflow-x: auto; /* Горизонтальный скролл */
+      scroll-snap-type: x mandatory; /* Плавный скролл */
+      -webkit-overflow-scrolling: touch; /* Для iOS */
+    //   padding-bottom: 10px;
+  
+      .photo-event-item {
+        flex-shrink: 0; /* Элементы не будут сжиматься */
+        width: calc(25% - 15px); /* 4 фото в одном ряду */
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        padding: 10px;
+  
+        img {
+          width: 100%;
+          max-width: 500px;
+          height: 300px;
+        //   max-height: 300px;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+  
+        p {
+          margin-top: 10px;
+          font-size: 22px;
+          color: #333;
+        }
+      }
+    }
+  
+    /* Стили для планшетов (1024px и меньше) */
+    @media (max-width: 1024px) {
+      .photo-events-container {
+        .photo-event-item {
+          width: calc(50% - 15px); /* 2 фото в ряду */
+        }
+      }
+    }
+  
+    /* Стили для мобильных устройств (768px и меньше) */
+    @media (max-width: 768px) {
+      .photo-events-container {
+        .photo-event-item {
+          width: calc(100% - 15px); /* 1 фото в ряду */
+        }
+      }
+    }
+  
+    /* Стили для экранов 992px и меньше */
+    @media (max-width: 992px) {
+      .photo-events-container {
+        
+        .photo-event-item {
+          width: calc(50.33% ); /* 3 фото в ряду */
+          
+        }
+        img{
+            max-height: 250px;
+
+        }
+        
+      }
+    }
+  
+    /* Стили для экранов 576px и меньше */
+    @media (max-width: 576px) {
+      .photo-events-container {
+        .photo-event-item {
+            max-width: 300px;
+            
+          width: calc(100% - 15px); /* 1 фото в ряду для мобильных устройств */
+        }
+      }
+      img{
+        max-height: 200px;
+      }
+    }
+  }
+.events-text{
+  font-size: 1.5rem;
+    margin-left:110px;
+    @media (max-width: 576px){
+        margin-left: 20px;
+        font-size: 0.75rem;
+    }
+    h1{
+color: black;
+    }
+    h2{
+     color: #00000080;
+    }
+}

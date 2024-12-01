@@ -1,0 +1,60 @@
+.InfoBlock {
+    display: flex;
+    gap: 20px;
+
+    &-img {
+        width: 50%;
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 50%;
+
+        h1 {
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 400px;
+            font-size: 25px;
+            line-height: 41px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        p {
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 110%;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.04em;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        &-btn {
+            font-family: Helvetica;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: -0.04em;
+            text-align: left;
+            text-decoration: none;
+            text-decoration-color: black;
+            text-decoration: underline 2px;
+            color: #000;
+
+            &:hover,
+            &:visited,
+            &:active {
+                color: black;
+            }
+        }
+    }
+}

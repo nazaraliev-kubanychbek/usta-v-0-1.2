@@ -1,0 +1,95 @@
+.container-partners {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: flex-start; /* Выравнивание элементов слева */
+    gap: 20px; /* Задает одинаковый отступ между элементами */
+    overflow-x: auto; /* Добавляет горизонтальную прокрутку при переполнении */
+    padding-bottom: 10px; /* Отступ снизу для прокрутки */
+
+}
+
+.partners {
+    margin: auto;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    
+}
+
+.container-partners-h1 {
+    font-family: Helvetica;
+    font-size: 40px;
+    font-weight: 550;
+    line-height: 55.2px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-content {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0000004D;
+    padding: 10px;
+    margin: 20px 10px;
+    transition: transform 0.3s ease; /* Плавная анимация увеличения карточки */
+}
+
+.card-content:hover {
+    transform: scale(1.25); /* Увеличение карточки при наведении */
+}
+
+.card-content-img {
+    width: 110px;
+    height: 40px;
+    transition: transform 0.3s ease; /* Плавная анимация увеличения изображения */
+}
+
+.card-content:hover .card-content-img {
+    transform: scale(1); /* Увеличение изображения при наведении на карточку */
+}
+
+/* Медиазапросы */
+@media screen and (max-width: 992px) {
+    .container-partners-h1 {
+        font-size: 30px;
+        line-height: 41.4px;
+    }
+
+    .container-partners {
+        justify-content: center; /* Центрируем контейнер на экранах меньше 992px */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-partners {
+        justify-content: center;
+        gap: 25px; /* Центрируем элементы */
+    }
+
+    
+}
+
+@media screen and (max-width: 576px) {
+    .container-partners-h1 {
+        font-size: 22px;
+        line-height: 30.36px;
+        text-align: left; /* Центрируем заголовок на маленьких экранах */
+    }
+
+    
+
+    /* Скрытие логотипов, если их не хватает по ширине */
+   
+}

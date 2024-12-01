@@ -1,0 +1,1 @@
+export const URL_API = "https://new-usta.webtm.ru/";
