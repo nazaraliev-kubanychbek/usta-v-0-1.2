@@ -36,25 +36,34 @@ function Community() {
   return (
     <div className="community">
       <div
-        className="banner"
+        className="page-banner"
         style={{ backgroundImage: `url(${communityData.photo})` }}
       >
         <div className="container">
-          <div className="content-head">
-            <h1 className="content-head-h1">
+          <div className="page-main-text-block">
+            <h1 className=" page-title">
               {getLocalizedText(communityData, lang, "title")}
             </h1>
-            <p className="content-head-p">
+            <p className=" page-description">
               {getLocalizedText(communityData, lang, "description")}
             </p>
           </div>
         </div>
       </div>
       <div className="container">
+        <section className='section'>
         <Slider />
+        </section>
+        <section className='section'>
         <Slider />
+        </section>
+        <section className='section'>
         <Partners />
+        </section>
+        <section className='section'>
         <Index />
+        </section>
+
       </div>
     </div>
   );

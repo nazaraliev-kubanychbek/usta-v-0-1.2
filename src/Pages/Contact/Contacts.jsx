@@ -25,7 +25,7 @@ function Contacts() {
         setError("Произошла ошибка при загрузке данных");
         console.error("Error fetching data:", error);
       });
-  }, [lang]);
+  }, []);
   useEffect(() => {
     axios
       .get(`${URL_API}api/v1/contacts/emails/`)
@@ -37,7 +37,7 @@ function Contacts() {
         setError("Произошла ошибка при загрузке данных");
         console.error("Error fetching data:", error);
       });
-  }, [lang]);
+  }, []);
   useEffect(() => {
     axios
       .get(`${URL_API}api/v1/contacts/contacts/`)
@@ -49,7 +49,7 @@ function Contacts() {
         setError("Произошла ошибка при загрузке данных");
         console.error("Error fetching data:", error);
       });
-  }, [lang]);
+  }, []);
   useEffect(() => {
     axios
       .get(`${URL_API}api/v1/contacts/addresses/`)
@@ -61,17 +61,19 @@ function Contacts() {
         setError("Произошла ошибка при загрузке данных");
         console.error("Error fetching data:", error);
       });
-  }, [lang]);
+  }, []);
 
   return (
     <div className="Contact">
-      <div className="padding-bottom">
+      <div >
         <div
-          className="Contact-banner"
+          className="page-banner"
           style={{ backgroundImage: `url(${banner.banner})` }}
         >
-          <div
-            className="Contact-banner__text"
+         <div className="container">
+         <div className="page-main-text-block">
+          <h1
+            className="page-title"
             dangerouslySetInnerHTML={{
               __html:
                 lang === "ru"
@@ -80,11 +82,15 @@ function Contacts() {
                   ? banner.title_en
                   : banner.title_ky,
             }}
-          ></div>
+          ></h1>
+          </div>
+         </div>
+
         </div>
       </div>
+      <section className="section">
       <div className="container">
-        <div className="Contact-list-label">{lang === "ru" ? "ДЛЯ ОБРАТНОЙ СВЯЗИ:" : lang === "en" ? "FOR FEEDBACK:" : "ПИКИР ҮЧҮН" }</div>
+        <div className="Contact-list-label">{lang === "ru" ? "ЧТОБЫ СВЯЗАТЬСЯ С НАМИ:" : lang === "en" ? "TO CONTACT US:" : "БИЗ БАЙЛАНЫШЫШ ҮЧҮН:" }</div>
         <div className="Contact-list">
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
@@ -145,6 +151,8 @@ function Contacts() {
           </div>
         </div>
       </div>
+      </section>
+
     </div>
   );
 }

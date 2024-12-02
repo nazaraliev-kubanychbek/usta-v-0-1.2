@@ -26,14 +26,14 @@ function Ambassadorship() {
   return (
     <div className="ambassadorship">
       <div
-        className="main-screen"
+        className="page-banner"
         style={{ backgroundImage: `url(${data.image})` }}
       >
         <div className="container">
-          <div className="column">
-            <div className="main-screen-block">
-              <div
-                className="main-screen-head"
+
+            <div className="page-main-text-block">
+              <h1
+                className="page-title"
                 dangerouslySetInnerHTML={{
                   __html:
                     lang === "ru"
@@ -42,9 +42,9 @@ function Ambassadorship() {
                       ? data.title_en
                       : data.title_ky,
                 }}
-              ></div>
-              <div
-                className="main-screen-text"
+              ></h1>
+              <p
+                className="page-description"
                 dangerouslySetInnerHTML={{
                   __html:
                     lang === "ru"
@@ -53,9 +53,9 @@ function Ambassadorship() {
                       ? data.description_en
                       : data.description_ky,
                 }}
-              ></div>
+              ></p>
             </div>
-          </div>
+
         </div>
       </div>
       <div className="container">
@@ -83,9 +83,15 @@ function Ambassadorship() {
             }}
           ></div>
         </div>
-        <CategoryBlock />
 
-        <AmbassadorList />
+        <section className="section">
+        <CategoryBlock />
+        </section>
+
+            <section className="section">
+            <AmbassadorList />
+            </section>
+
 
 
 

@@ -79,10 +79,15 @@ const CompanyDetail = () => {
             </div>
           </div>
           {/* Баннер конец */}
-                  <div className="container">
+          <section className="section">
+          <div className="container">
                   <CategoryBlock />
                   </div>
+          </section>
+
           {/* Блок с описанием начало */}
+
+          <section className="section">
           <div className="container">
             <div
               className="company-detail-description-block"
@@ -96,6 +101,8 @@ const CompanyDetail = () => {
               }}
             ></div>
           </div>
+          </section>
+
 
           {/* блок с описанием конец */}
 
@@ -158,17 +165,26 @@ const CompanyDetail = () => {
 
           {/* Слайды начало */}
 
-          <Slider url={""} list={data.ambassador_images} />
+            <section className="section">
+            <Slider url={""} list={data.ambassador_images} />
+            </section>
+
           {/* Слайды конец */}
 
           {/* Реквизиты начало */}
+          <section className="section">
           <Requisites data={data} />
+          </section>
+
 
           {/* Реквизиты конец */}
+          <section className="section">
           <div className="container">
 
-            <AmbassadorList id={data.id} />
-          </div>
+<AmbassadorList id={data.id} />
+</div>
+          </section>
+
         </>
       )}
     </div>

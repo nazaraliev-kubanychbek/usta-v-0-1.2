@@ -35,7 +35,7 @@ const AmbassadorList = ({id}) => {
     {ambassadorList.map((item) => {
           return (
             <Link style={{textDecoration: 'none'}} key={item.id} to={`/ambassadorship/company/${item.id}`}>
-               <div className="ambassadorship-card">
+               <div className="ambassadorship-card row-gap-60">
               <img
                 src={item.banner_image}
                 alt=""

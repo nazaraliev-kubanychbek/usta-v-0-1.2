@@ -22,7 +22,7 @@ const BigBlocks = ({ URL }) => {
 
     useEffect(() => {
         if (blocksData.length) {
-            console.log(blocksData); 
+            console.log(blocksData);
         }
     }, [blocksData]);
 

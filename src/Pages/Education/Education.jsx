@@ -44,9 +44,16 @@ function Education() {
   return (
     <div className="education-page">
       <div className="education-body">
-        <div className="education-banner">
+        <div className="page-banner"
+        style={{
+          backgroundImage: `url(${educationData.image})`
+        }}
+        >
           <div className="container">
+            <div className="page-main-text-block">
             <h1
+
+            className="page-title"
               dangerouslySetInnerHTML={{
                 __html: educationData
                   ? lang === "ru"
@@ -58,6 +65,7 @@ function Education() {
               }}
             />
             <p
+            className="page-description"
               dangerouslySetInnerHTML={{
                 __html: educationData
                   ? lang === "ru"
@@ -68,6 +76,8 @@ function Education() {
                   : "",
               }}
             />
+            </div>
+
           </div>
         </div>
       </div>
@@ -100,10 +110,10 @@ function Education() {
         </div>
       </div>
 
-      <section className="education-content-section">
+      <section className="section">
         <div className="container">
           {educationCardsData.map((card, index) => (
-            <div className="education-content-item" key={index}>
+            <div className="education-content-item row-gap-60" key={index}>
               {index % 2 === 0 ? (
                 <div className="row2">
                   <div className="col-6">
@@ -183,7 +193,7 @@ function Education() {
           {educationVideoData.map((video, index) => (
             <div className="education-content-item" key={index}>
               {index % 2 === 0 ? (
-                <div className="row2 education-row2">
+                <div className="row2 education-row2 row-gap-60">
                   <div className="col-6 education-col-6">
                     <ReactPlayer
                       url={video.video_url}
@@ -218,7 +228,7 @@ function Education() {
                   </div>
                 </div>
               ) : (
-                <div className="row2 education-row2">
+                <div className="row2 education-row2 row-gap-60">
                   <div className="col-6 education-col-6">
                     <div className="education-text">
                       <h2

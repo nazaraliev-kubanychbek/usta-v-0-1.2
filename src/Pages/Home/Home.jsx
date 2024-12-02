@@ -141,20 +141,20 @@ function Home() {
   return (
     <div className="home">
       <div
-        className="main-screen"
+        className="page-banner"
         style={{ backgroundImage: `url(${data.image})` }}
       >
         <div className="container">
-          <div className="column">
-            <div className="main-screen-block">
-              <div className="main-screen-head">
+
+            <div className="page-main-text-block">
+              <div className="main-screen-head page-title">
                 {lang === "ru"
                   ? data.title_ru
                   : lang === "en"
                   ? data.title_en
                   : data.title_ky}
               </div>
-              <div className="main-screen-text">
+              <div className="main-screen-text page-description">
                 {lang === "ru"
                   ? data.description_ru
                   : lang === "en"
@@ -162,7 +162,7 @@ function Home() {
                   : data.description_ky}
               </div>
             </div>
-          </div>
+
         </div>
       </div>
       <div className="container">
@@ -180,20 +180,37 @@ function Home() {
         </div>
       </div>
 
-      <Slider
+            <section className="section">
+            <Slider
         name={lang === "ru" ? "Новости" : lang === "en" ? "News" : "Жаңылыктар"}
         cards={cardDataNews}
       />
-      <ServiceTab URL="api/v1/base/service/" />
-      <PartnersTab partners={partners} />
+            </section>
 
-      <BigBlocks mode="json" URL="api/v1/base/section/" />
-      <InfoBlocks mode="html" URL="api/v1/base/commonmodels/" btn="true" />
-
-      <Slider
+<section className="section">
+<ServiceTab URL="api/v1/base/service/" />
+</section>
+            <section className="section">
+            <PartnersTab partners={partners} />
+            </section>
+            <section className="section">
+            <BigBlocks mode="json" URL="api/v1/base/section/" />
+            </section>
+            <section className="section">
+            <InfoBlocks mode="html" URL="api/v1/base/commonmodels/" btn="true" />
+            </section>
+            <section className="section">
+            <Slider
         name={lang === "ru" ? "Команда" : lang === "en" ? "Team" : "Команда"}
         cards={cardDataTeam}
       />
+            </section>
+
+
+
+
+
+
     </div>
   );
 }

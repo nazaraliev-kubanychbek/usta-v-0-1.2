@@ -78,7 +78,7 @@ function Slider({ name, cards = [] }) {
   }, []);
 
   return (
-    <div className="padding">
+    <div>
       <div className="container">
         <div className="slider">
           <div className="slider-row">
@@ -153,7 +153,7 @@ function BigBlock({
   const SubheadTag = subheadTag;
   const lang = useSelector((s) => s.reducer.lang);
   return (
-    <div className="padding-100px">
+    <div  className="row-gap-150">
       <div className="container">
         <h1 className="bigBlock-text-head">{head}</h1>
         <div className={`bigBlock ${reversed === "true" ? "reverse" : ""}`}>
@@ -277,7 +277,7 @@ function InfoBlock({ head, p, InfoImg, URL, reversed }) {
   const reversedStyle = reversed === "true" ? { textAlign: "right" } : {};
   const lang = useSelector((s) => s.reducer.lang);
   return (
-    <div className="padding-100px">
+    <div >
       <div className="container">
         <div className={`InfoBlock ${reversed === "true" ? "reverse" : ""}`}>
           <div className="InfoBlock-img">

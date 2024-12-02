@@ -4,18 +4,15 @@
   }
 
   .main-screen {
-    display: flex;
-    flex-direction: column;
-    align-content: end;
-    justify-content: end;
     width: 100%;
     height: 100vh;
-    padding: 70px 75px 150px;
     background-size: cover;
-    gap: 40px;
-
     &-block {
-      display: block;
+          display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 85vh;
+            width: 65%;
     }
 
     &-blockAlt {
@@ -201,7 +198,6 @@
   &-card {
     display: flex;
     column-gap: 20px;
-    margin-top: 80px;
 
     &-img {
       width: 400px;
@@ -216,7 +212,7 @@
       letter-spacing: -0.04em;
       margin-bottom: 18px;
       color: #000000;
-   
+
 
     }
 
@@ -233,207 +229,7 @@
   }
 }
 
-@media screen and (max-width: 1920px) {
-  .ambassadorship {
-    .reverse {
-      flex-direction: row-reverse;
-    }
 
-    .main-screen {
-      display: flex;
-      flex-direction: column;
-      align-content: end;
-      justify-content: end;
-      width: 100%;
-      height: 100vh;
-      padding: 70px 75px 150px;
-      background-size: cover;
-      gap: 40px;
-
-      &-block {
-        display: block;
-      }
-
-      &-blockAlt {
-        display: none;
-      }
-
-      &-head {
-        height: auto;
-        width: 70%;
-        color: white;
-        font-family: Helvetica;
-        font-size: 60px;
-        font-weight: bold;
-        line-height: 60px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        margin-bottom: 20px;
-      }
-
-      &-text {
-        height: auto;
-        width: 70%;
-        color: white;
-        font-family: Helvetica;
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 20px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        margin-bottom: 40px;
-      }
-
-      &-btn {
-        padding: 20px 90px;
-        background-color: #fff;
-        color: #001c7c;
-        font-family: Helvetica;
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        border-radius: 20px;
-        width: max-content;
-      }
-    }
-
-    .categoriesChange {
-      width: 35%;
-      height: 60px;
-      background-color: #616161;
-      margin-bottom: 40px;
-      border: 1px solid black;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      &-title {
-        font-family: Helvetica;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 32px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: #ffffff;
-      }
-
-      &-burgerMenu {
-        object-position: bottom;
-
-        img {
-          width: 32px;
-          height: 22px;
-          filter: invert(1) grayscale(1) brightness(1000%);
-        }
-      }
-    }
-
-    .categoriesList {
-      display: flex;
-      flex-direction: column;
-      background-color: #f4f4f4;
-      padding: 0px;
-      position: relative;
-      top: -40px;
-      left: 0px;
-      width: 35%;
-      box-shadow: 0px 0px 5px #00000060;
-    }
-
-    .categoryItem {
-      padding: 15px 24px;
-      cursor: pointer;
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      gap: 24px;
-
-      &:hover {
-        background-color: #ddd;
-      }
-
-      &__text {
-        font-family: Helvetica;
-        font-size: 24px;
-        font-weight: 100;
-        line-height: 24px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: #0a30b4;
-      }
-
-      &__img {
-        height: 40px;
-        width: auto;
-      }
-    }
-
-    .miniInfoBlockContainer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .miniInfoBlock {
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-
-      &-img {
-        width: 400px;
-        height: 300px;
-
-        &__img {
-          width: 400px;
-          height: 300px;
-          border-radius: 20px;
-          background-size: cover;
-        }
-      }
-
-      &-text {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-
-        &__title {
-          font-family: Helvetica;
-          font-size: 32px;
-          font-weight: 400;
-          line-height: 35.2px;
-          letter-spacing: -0.04em;
-          text-align: left;
-        }
-
-        &__description {
-          font-family: Helvetica;
-          font-size: 28px;
-          font-weight: 400;
-          line-height: 30.8px;
-          letter-spacing: -0.04em;
-          text-align: left;
-          opacity: 56%;
-
-          ul {
-            li {
-              list-style: none;
-              color: #000000;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 1400px) {
   .ambassadorship {

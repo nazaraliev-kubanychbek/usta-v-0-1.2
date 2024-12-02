@@ -8,7 +8,7 @@ const ServiceTab = ({ URL }) => {
     const lang = useSelector(s => s.reducer.lang);
     const [blocksData, setBlocksData] = useState([]);
     const [error, setError] = useState(null);
-    
+
     useEffect(() => {
         axios.get(`${URL_API}${URL}`)
             .then((response) => {
@@ -29,7 +29,7 @@ const ServiceTab = ({ URL }) => {
     if (error) return <p>Ошибка: {error}</p>;
 
     return (
-        <div className="padding">
+        <div>
             <div className="container">
                 <div className="Service">
                     <h1>{lang === "ru" ? "Услуги" : lang === "en" ? "Services" : "Кызматтар"}</h1>
@@ -51,4 +51,3 @@ const ServiceTab = ({ URL }) => {
 };
 
 export default ServiceTab;
-

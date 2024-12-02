@@ -1,17 +1,22 @@
 .education-page {
 	font-family: Arial, sans-serif;
-	color: #333;
+
 
 	.banner-box {
 		padding: 10px;
 	}
 
 	.education-banner {
-		background-image: url('../Education/img/educationH.png');
 		background-size: cover;
-		// background-repeat: no-repeat;
 		height: 100vh;
-		padding-top: 400px;
+
+		&-block{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height: 85vh;
+			width: 65%;
+		}
 
 		@media screen and (max-width: 576px) {
 			// position: fixed;
@@ -46,55 +51,9 @@
 			}
 		}
 
-		& h1 {
-			color: #fff;
-			font-family: Helvetica;
-			font-size: 34px;
-			font-weight: 400;
-			line-height: 24px;
-
-			@media (max-width: 768px) {
-				width: 340px;
-				font-family: Helvetica;
-				font-size: 34px;
-				font-weight: 400;
-				line-height: 34px;
-				letter-spacing: -0.04em;
-			}
-
-			@media (max-width: 576px) {
-				display: none;
-			}
-		}
-
-
-		& p {
-			font-family: Helvetica;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 20px;
-			letter-spacing: -0.04em;
-			text-align: left;
-			color: #fff;
-			width: 600px;
-			margin-top: 20px;
-
-			@media (max-width: 768px) {
-				width: 340px;
-				font-family: Helvetica;
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 20px;
-				letter-spacing: -0.04em;
 
 
 
-			}
-
-			@media (max-width: 576px) {
-				display: none;
-			}
-		}
 	}
 
 	.banner-title-mob {
@@ -156,7 +115,7 @@
 
 
 .education-content-section {
-	margin-top: 80px;
+
 
 	.container {
 		@media (max-width: 576px) {
@@ -174,7 +133,6 @@
 
 .education-content-item {
 	display: flex;
-	padding: 40px;
 	justify-content: center;
 
 
@@ -257,9 +215,8 @@
 	width: 100% !important;
 	height: 400px !important;
 	padding-bottom: 20px;
-  
+
 	@media (max-width: 576px) {
 	  height: 200px !important;
 	}
   }
-  

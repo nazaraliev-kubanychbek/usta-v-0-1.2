@@ -70,45 +70,43 @@ const Events = () => {
 
   return (
     <div className="events">
-      <div className="head-images">
-        <div className="overlay">
-          {isLoading && <div className="loader">Загрузка...</div>}
-          {error && <div className="error-message">Ошибка: {error}</div>}
-          {bannerEvents.length > 0 && !error && (
-            <div className="banner-images">
-              {bannerEvents.map((event, index) => (
-                <div key={index} className="banner-item">
-                  <img src={event.banner} alt={event.name} />
-                  <h1
-                    className="title-header"
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        lang === 'ru'
-                          ? event.title
-                          : lang === 'en'
-                          ? event.title_en
-                          : event.title_ky,
-                    }}
-                  ></h1>
-                  <h1
-                    className="text-header"
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        lang === 'ru'
-                          ? event.description
-                          : lang === 'en'
-                          ? event.description_en
-                          : event.description_ky,
-                    }}
-                  ></h1>
-                </div>
-              ))}
-            </div>
-          )}
+      <div className="page-banner"
+      style={
+        bannerEvents.length > 0
+        ? {
+          backgroundImage: `url(${bannerEvents[0].banner})`,
+        }
+        : {}
+      }
+      >
+        <div className="container">
+          {
+             bannerEvents.length > 0
+             ?   <div className="page-main-text-block">
+                  <h1 className="page-title" dangerouslySetInnerHTML={{__html:
+                    lang === 'ru'
+                    ?  bannerEvents[0].title
+                    : lang === 'en'
+                    ? bannerEvents[0].title_en
+                    : bannerEvents[0].title_ky
+                  }}></h1>
+                  <p className="page-description" dangerouslySetInnerHTML={{__html:
+                    lang === 'ru'
+                    ?  bannerEvents[0].description
+                    : lang === 'en'
+                    ? bannerEvents[0].description_en
+                    : bannerEvents[0].description_ky
+                  }}></p>
+             </div>
+             : ''
+          }
+
         </div>
+
       </div>
 
       {/* Блок с текстом события */}
+      <section className="section">
       <div className="events-text-1">
         {isLoading ? (
           <div className="loader">Загрузка...</div>
@@ -141,9 +139,13 @@ const Events = () => {
           </>
         )}
       </div>
+      </section>
+
 
       <div className="container">
         <div className="events-container">
+
+          <section className="section">
           <div className="photo-events">
             <div className="photo-events-container">
               {photoEvents.length > 0 && !error ? (
@@ -167,9 +169,11 @@ const Events = () => {
               )}
             </div>
           </div>
+          </section>
 
-          <div className="key-annual-events">
-            <div className="events-text-title">
+              <section className="section">
+              <div className="key-annual-events">
+            <div className='key-annual-title'>
               {isLoading ? (
                 <div className="loader">Загрузка...</div>
               ) : error ? (
@@ -209,8 +213,11 @@ const Events = () => {
               )}
             </ul>
           </div>
+              </section>
 
-          <div className="video-content-container">
+              <section className="section">
+
+              <div >
             {isLoading && <div className="loader">Загрузка...</div>}
             {error && <div className="error-message">Ошибка: {error}</div>}
             {videoEvents.length > 0 && !error ? (
@@ -252,6 +259,8 @@ const Events = () => {
               <p>Данных о видео событиях пока нет.</p>
             )}
           </div>
+              </section>
+
         </div>
       </div>
     </div>

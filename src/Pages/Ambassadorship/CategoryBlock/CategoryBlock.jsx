@@ -83,7 +83,7 @@ const CategoryBlock = () => {
           onClick={() => {
             setShowMenu(false);
             dispatch(setSelectedCategory("all"));
-            navigate('/services');
+            navigate('/services/detail');
           }}
         >
           <img

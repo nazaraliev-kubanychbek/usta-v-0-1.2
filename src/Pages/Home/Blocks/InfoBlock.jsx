@@ -52,7 +52,7 @@ const InfoBlocks = ({ URL, mode, btn, video }) => {
             />
           ))
         : infoBlockData.map((block, index) => (
-            <div className="padding-100px" key={block.id}>
+            <div  className="row-gap-60" key={block.id}>
               <div className="container">
                 <div
                   className={`InfoBlock ${index % 2 === 1 ? "reverse" : ""}`}

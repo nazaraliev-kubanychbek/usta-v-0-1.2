@@ -1,55 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Helvetica;
+.events{
+font-family:Helvetica;
+  &-banner{
+    height: 100vh;
+    background-size: cover;
 
-  overflow-x: hidden; // Скрыть горизонтальный скролл
-  
-}
-
-.header {
-  margin: auto;
-
-  &__container {
-    border: 3px solid rgba(175, 170, 170, 0.5);
-    width: 90%;
-    border-radius: 20px;
-    margin: -10px auto;
-  }
-
-  hr {
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
-  &-head {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-  }
-
-  &-foot {
-    padding: 20px;
-  }
-
-  &__nav {
-    ul {
-      list-style: none;
+    &-block{
       display: flex;
-      justify-content: space-around;
-
-      li {
-        margin: 5px;
-        text-decoration: none;
-      }
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 85vh;
+      width: 65%;
     }
   }
+
 }
+
 
 .t {
   text-decoration: none;
@@ -96,35 +62,6 @@ body {
   }
 }
 
-  .container-title {
-    padding: 20px;
-    width: 700px;
-    margin: 300px 90px;
-  }  
-  .title-header {
-    font-family: Helvetica;
-    font-size: 50px;
-    font-weight: 400;
-    line-height: 50px;
-    letter-spacing: -0.06em;
-    text-align: left;
-    color: #fff;
-    transform: translate(200px,-320px);
-    @media screen and (max-width: 1200px) {
-      transform: translate(-55px);
-  }
-    @media screen and (max-width: 992px) {
-      transform: translate(-40px);
-  }
-    @media screen and (max-width: 768px) {
-      transform: translate(60px);
-  }
-    @media screen and (max-width: 576px) {
-      transform: translate(17px,-10px);
-      color: #000000;
-      width: 200px;
-    }
-  }
 
   .text-header {
     transform: translate(200px,-300px);
@@ -137,22 +74,8 @@ body {
     color: #fff;
     max-width: 600px;   /* Ограничивает ширину текста */
     padding-bottom: 20px;
-    @media screen and (max-width: 1200px) {
-      transform: translate(-55px);
-  }
-    @media screen and (max-width: 992px) {
-      transform: translate(90px,-200px);
-  }
-    @media screen and (max-width: 768px) {
-      transform: translate(60px);
-      padding-left: 60px;
-  }
-    @media screen and (max-width: 576px) {
-      color: #000;
-      width: 300px;
-      transform: translate(-40px,-10px);
-      padding-top: 20px;
-    }
+
+
   }
 
 .btn-header-title {
@@ -329,10 +252,6 @@ body {
   }
 }
 
-.key-annual-title {
-  margin: 15px;
-  padding: 5px;
-}
 
 .events-container {
   width: 100%;
@@ -418,7 +337,7 @@ body {
 .video-content-container img {
     width: 640px;
     max-width: 910px; // или другой размер, если необходимо
-    
+
     // Адаптивные стили
     @media screen and (max-width: 992px) {
         width: 467px; // Устанавливаем ширину на 100% для адаптации под экран
@@ -427,15 +346,14 @@ body {
     }
 }
 
-.key-annual-events { 
-  
+.key-annual-events {
+
   max-width: 1430px;
   margin: 0 auto;
     // padding: 20px;
   border-radius: 8px;
 
   .key-annual-title {
-    font-size: 40px;
     margin-bottom: 20px;
     color: #000000;
     font-family: Helvetica;
@@ -455,7 +373,7 @@ body {
       height: 8px; // Высота полосы прокрутки
     }
 
-   
+
 
     li {
       list-style: none;
@@ -531,13 +449,13 @@ body {
       padding: 5px;
     }
 
-    .images-1 { 
+    .images-1 {
       gap: 8px; // Уменьшаем расстояние между элементами
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch; // Плавный скролл для мобильных устройств
     }
 
-    .images-1 li {  
+    .images-1 li {
       flex: 0 0 90%; // Одно фото на всю ширину
     }
 
@@ -548,12 +466,7 @@ body {
       border-radius: 4px;
     }
 
-    .key-annual-title {
-      transform: translate(-22px);
-      font-family: Helvetica;
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
+
 
     .images-1 p {
       font-size: 14px;
@@ -562,13 +475,13 @@ body {
   }
 }
 .events-text h1{
-  
+
   margin-left: 40px;
   color: black;
   font-family: Helvetica;
   font-size: 40px;
   @media screen and (max-width: 576px){
-    
+
     margin-top: 20px;
   }
 }
@@ -589,4 +502,3 @@ body {
   margin-bottom: 20px;
   margin-top: 70px;
 }
-

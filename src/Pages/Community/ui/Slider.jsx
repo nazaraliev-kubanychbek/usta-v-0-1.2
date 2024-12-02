@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img12 from '../assets/Vector (2).jpg'; 
+import img12 from '../assets/Vector (2).jpg';
 import './styles/slider.scss';
 import { URL_API } from '../../../Futures/URLAPI';
+import "swiper/css";
 
 const stripHTML = (htmlString) => {
   const doc = new DOMParser().parseFromString(htmlString, 'text/html');

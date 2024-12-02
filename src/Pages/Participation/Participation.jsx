@@ -9,9 +9,12 @@ function Participation() {
   const [awards, setAwards] = useState(null);
   const [mentoringPrograms, setMentoringPrograms] = useState([]);
   const lang = useSelector((state) => state.reducer.lang);
+  const [textData, setTextData] = useState({});
 
   useEffect(() => {
     // Запросы к API
+    axios( URL_API + 'api/v1/projects/project-participation/')
+    .then(({data}) => setTextData(data[0]))
     axios
       .get('https://new-usta.webtm.ru/api/v1/projects/projects/')
 
@@ -33,40 +36,58 @@ function Participation() {
 
   return (
     <div className="Participation-container">
-      <div className="Participation">
+      <div className="page-banner"
+      style={{
+        backgroundImage: `url(${textData.banner})`
+      }}
+      >
         <div className="container">
-          <div className="Participation-texts">
-            <div className="Participation-titles">
-              <h1 className="Participation-text">
-                {lang === 'ru' ? 'Участие в проектах' : lang === 'en' ? 'Participation in Projects' : 'Долбоорлорго катышуу'}
+            <div className="page-main-text-block">
+              <h1 className="page-title">
+                {
+                lang === 'ru'
+                ? textData.title
+                : lang === 'en'
+                ? textData.title_en
+                 : textData.title_ky
+                 }
               </h1>
-              <p className="Participation-title">
-                {lang === 'ru'
-                  ? '“USTA International” вдохновляет и направляет людей в сфере инженерии...'
-                  : lang === 'en'
-                  ? '“USTA International” inspires and guides people in the field of engineering...'
-                  : '“USTA International” инженерия тармагында адамдарды шыктандырат...'}
+              <p className="page-description">
+                { lang === 'ru'
+                ? textData.description
+                : lang === 'en'
+                ? textData.description_en
+                 : textData.description_ky}
               </p>
             </div>
-          </div>
+
         </div>
       </div>
 
       <div className="Particicpation-text-mobile">
-      <h1 className="Participation-text">
-                {lang === 'ru' ? 'Участие в проектах' : lang === 'en' ? 'Participation in Projects' : 'Долбоорлорго катышуу'}
+      <h1 className="Participation-text page-title">
+                {
+                lang === 'ru'
+                ? textData.title
+                : lang === 'en'
+                ? textData.title_en
+                 : textData.title_ky
+                 }
               </h1>
-              <p className="Participation-title">
-                {lang === 'ru'
-                  ? '“USTA International” вдохновляет и направляет людей в сфере инженерии...'
-                  : lang === 'en'
-                  ? '“USTA International” inspires and guides people in the field of engineering...'
-                  : '“USTA International” инженерия тармагында адамдарды шыктандырат...'}
+              <p className="Participation-title page-description">
+                { lang === 'ru'
+                ? textData.description
+                : lang === 'en'
+                ? textData.description_en
+                 : textData.description_ky}
               </p>
       </div>
       <div className="container">
+
+
         {/* Секция проектов */}
-        <div className="Participation-row-box">
+         <section className='section'>
+         <div className="Participation-row-box">
           <div className="row">
             {Array.isArray(projects) && projects.length > 0 ? (
               projects.map((project, index) => (
@@ -95,8 +116,10 @@ function Participation() {
             )}
           </div>
         </div>
+         </section>
 
         {/* Секция наград */}
+        <section className='section'>
         <div className="Participation-gap">
           <h3 className="Participation-gap-text">
             {lang === 'ru' ? 'Награды за достижения' : lang === 'en' ? 'Awards for  ' : 'Ийгиликтер үчүн сыйлыктар'}
@@ -109,8 +132,11 @@ function Participation() {
             )}
           </div>
         </div>
+        </section>
+
 
         {/* Секция программ наставничества */}
+        <section className='section'>
         <div className="Participation-program">
           <h1 className="Participation-program-text-h3">
             {lang === 'ru'
@@ -195,6 +221,9 @@ function Participation() {
             )}
           </div>
         </div>
+        </section>
+
+
       </div>
     // </div>
   );

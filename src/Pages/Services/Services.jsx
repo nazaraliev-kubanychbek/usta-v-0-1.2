@@ -5,7 +5,7 @@ import "../Home/Home.scss";
 import "../../Widgets/ui/scss/styles.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux"; 
+import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
 
 function Services() {
@@ -58,7 +58,7 @@ function Services() {
       case 'en':
         return title.title_en;
       default:
-        return title.title_ky; 
+        return title.title_ky;
     }
   };
 
@@ -76,30 +76,31 @@ function Services() {
   return (
     <div className="Services">
       <div
-        className="mainscreen"
+        className="page-banner"
         style={{
           backgroundImage: `url(${service.image})`
         }}
       >
         <div className="container">
-          <div className="mainscreen-text">
+          <div className="page-main-text-block">
             {/* Локализуем заголовок и описание */}
-            <h1 className="mainscreen-text__h1" dangerouslySetInnerHTML={{ __html: localizedTitle(service) }}></h1>
-            <p className="mainscreen-text__p" dangerouslySetInnerHTML={{ __html: localizedDescription(service) }}></p>
+            <h1 className="page-title" dangerouslySetInnerHTML={{ __html: localizedTitle(service) }}></h1>
+            <p className="page-description" dangerouslySetInnerHTML={{ __html: localizedDescription(service) }}></p>
           </div>
         </div>
       </div>
 
-      <div className="padding-box"></div>
 
-      <InfoBlockService
+        <section className="section">
+        <InfoBlockService
         mode="html"
         btn={"null"}
         URL="api/v1/services/detail/"
       />
+        </section>
 
-      <div className="container">
-        <div className="padding-box"></div>
+        <section className="section">
+        <div className="container">
         <h1 className="Services-h1" dangerouslySetInnerHTML={{ __html: localizedTitle(titles) }}></h1>
 
         {/* Articles API */}
@@ -109,7 +110,7 @@ function Services() {
               <div className="Services-img-card" key={index}>
                 <img
                   className="Services-h1-imgs-img"
-                  src={item.image || 'default-image-url'}  
+                  src={item.image || 'default-image-url'}
                   alt={item.title || "Image"}
                 />
                 {/* Локализуем заголовок для каждого элемента статьи */}
@@ -121,14 +122,17 @@ function Services() {
 
         {/* Articles API */}
       </div>
+        </section>
 
-      <div className="padding-box"></div>
-      <InfoBlock
+
+<section className="section">
+<InfoBlock
         mode="html"
         btn={"true"}
         URL="api/v1/services/program/"
       />
-      <div className="padding"></div>
+</section>
+
     </div>
   );
 }

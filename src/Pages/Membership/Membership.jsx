@@ -32,18 +32,18 @@ function Membership() {
 
   return (
     <div className='member-container'>
-      <div className='member-body container-abdialim'
+      <div className='page-banner'
         style={{
           backgroundImage: advantagesBanner ? `url(${advantagesBanner.image})` : 'none',
         }}
       >
         <div className="container">
-          <div className=" adaptive-margin-top ">
-            <h1 className='member-title'>
+          <div className="page-main-text-block">
+            <h1 className='page-title'>
               {advantagesBanner ? <>
               {
                 lang === 'ru'
-                ? advantagesBanner.title 
+                ? advantagesBanner.title
                 : lang === 'en'
                 ? advantagesBanner.title_en
                 : advantagesBanner.title_ky
@@ -51,10 +51,10 @@ function Membership() {
               </>: 'Загрузка...'}
             </h1>
 
-            <p className='member-text'>
+            <p className='page-description'>
               {advantagesBanner ?<>{
                  lang === 'ru'
-                 ? advantagesBanner.description 
+                 ? advantagesBanner.description
                  : lang === 'en'
                  ? advantagesBanner.description_en
                  : advantagesBanner.description_ky
@@ -67,7 +67,10 @@ function Membership() {
       </div>
 
       <div className="container">
-        {Array.isArray(advantageFor) && advantageFor.length > 0 ? (
+
+              <section className="section">
+
+              {Array.isArray(advantageFor) && advantageFor.length > 0 ? (
           advantageFor.map((card, index) => (
             <div className="member-main-img" key={card.id}>
               {index % 2 === 0 ? (
@@ -123,7 +126,10 @@ function Membership() {
         ) : (
           <p>Загрузка данных...</p>
         )}
+              </section>
 
+
+        <section className="section">
         <h1 className='ctegory-text'>{lang === "ru" ? "КАТЕГОРИИ" : lang === "en" ? "CATEGORIES" : "КАТЕГОРИЯЛАР"}</h1>
         <div className="scroll">
           <div className="member-category">
@@ -143,11 +149,10 @@ function Membership() {
             )}
           </div>
         </div>
+        </section>
 
-
-        <h1 className='member-steps-title padding-top'>{lang === "ru" ? "ПОШАГОВАЯ ИНСТРУКЦИЯ" : lang === "en" ? "STEP-BY-STEP INSTRUCTIONS" : "КАДАМ-БА-КАДАМ НУСКАМАЛАР"}
-          
-        </h1>
+          <section className="section">
+          <h1 className='member-steps-title padding-top'>{lang === "ru" ? "ПОШАГОВАЯ ИНСТРУКЦИЯ" : lang === "en" ? "STEP-BY-STEP INSTRUCTIONS" : "КАДАМ-БА-КАДАМ НУСКАМАЛАР"}</h1>
         <div className='member-steps padding-bottom'>
           {Array.isArray(instructions) && instructions.length > 0 ? (
             instructions.map((step, index) => (
@@ -170,6 +175,9 @@ function Membership() {
             'Загрузка инструкций...'
           )}
         </div>
+          </section>
+
+
       </div>
     </div>
   );

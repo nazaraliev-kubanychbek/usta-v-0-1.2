@@ -1,29 +1,7 @@
 .Participation {
-    width: 100%;
-    height: 100vh;
-    background-image: url('../Participation/imgs/Rectangle 288 (2).png');
-    background-size: cover;
-    background-position: center;
-    padding-top: 500px;
-    &-text {
-        width: 536px;
-        height: 50px;
-        font-family: 'Helvetica';
-        font-size: 50px;
-        letter-spacing: -0.04em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-    }
- 
-    &-title {
-        width: 733px;
-        font-family: 'Helvetica';
-        font-size: 20px;
-        line-height: 100%;
-        letter-spacing: -0.04em;
-        color: #FFFFFF;
-        margin-top: 80px;
-    }
+
+
+
     &-imgs {
         width: 100%;
         display: flex;
@@ -67,7 +45,6 @@
 
     &-gap {
         width: 100%;
-        margin-top: 150px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -97,7 +74,6 @@
         margin-top: 40px;
     }
     &-program{
-        margin-top: 150px;
         &-text{
             &-mobile{
                 display: none;
@@ -193,7 +169,7 @@
     .Participation-text{
         margin-top: 50px;
         height: auto;
-    
+
 
 }
 
@@ -243,11 +219,11 @@
     }
     .Participation-program-text{
         width: 100%;
-    } 
+    }
     // .Participation-program-title{
     //     height: 100px;
     // }
-  
+
 
     .Participation {
         // padding: 300px;
@@ -257,7 +233,7 @@
             line-height: 36px;
         }
     }
-   
+
 
 
 }
@@ -319,7 +295,7 @@ height: 40vh;
        .img2-by-partipication{
         display: none;
        }
-    
+
        .Participation-program-text-mobile{
         display: block;
        }
@@ -332,7 +308,7 @@ height: 40vh;
        .Participation-program-title2{
         display: none;
        }
-       
+
        .Participation-text{
         margin: 0;
         padding: 0;
@@ -344,8 +320,8 @@ height: 40vh;
         color: rgba(0, 0, 0, 0.5019607843);;
         width: 100%;
         margin: 0;
-        
-       } 
+
+       }
 
        .Particicpation-text-mobile{
         display: block;
