@@ -83,32 +83,36 @@ function Education() {
       </div>
 
       <div className="container">
-        <div className="banner-box">
-          <h1
-            className="banner-title-mob"
-            dangerouslySetInnerHTML={{
-              __html:
-                lang === "ru"
-                  ? educationData.title
-                  : lang === "en"
-                  ? educationData.title_en
-                  : educationData.title_ky,
-            }}
-          />
-          <p
-            className="banner-discription-mob"
-            dangerouslySetInnerHTML={{
-              __html: educationData
-                ? lang === "ru"
-                  ? educationData.description
-                  : lang === "en"
-                  ? educationData.description_en
-                  : educationData.description_ky
-                : "",
-            }}
-          />
-        </div>
-      </div>
+            <div className="page-main-text-block-mobile">
+            <h1
+
+            className="page-title-mobile"
+              dangerouslySetInnerHTML={{
+                __html: educationData
+                  ? lang === "ru"
+                    ? educationData.title
+                    : lang === "en"
+                    ? educationData.title_en
+                    : educationData.title_ky
+                  : "",
+              }}
+            />
+            <p
+            className="page-description-mobile"
+              dangerouslySetInnerHTML={{
+                __html: educationData
+                  ? lang === "ru"
+                    ? educationData.description
+                    : lang === "en"
+                    ? educationData.description_en
+                    : educationData.description_ky
+                  : "",
+              }}
+            />
+            </div>
+
+          </div>
+
 
       <section className="section">
         <div className="container">
@@ -228,7 +232,7 @@ function Education() {
                   </div>
                 </div>
               ) : (
-                <div className="row2 education-row2 row-gap-60">
+                <div className="row2 education-row2 row-gap-60 education-row2-reverse">
                   <div className="col-6 education-col-6">
                     <div className="education-text">
                       <h2

@@ -14,7 +14,7 @@ import News from '../Pages/News/News'
 import './App.scss';
 import PropsCategoryDetails from '../Pages/Ambassadorship/CardPage/PropsCategoryDetails/PropsCategoryDetails';
 import CompanyDetail from '../Pages/Ambassadorship/CardPage/CompanyDetail/CompanyDetail';
-import ServiceDetail from '../Pages/ServiceDetail/ServiceDetail';
+import AmbassadorCategory from '../Pages/Ambassadorship/AmbassadorCategory/AmbassadorCategory';
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path="/ambassadorship" element={<Ambassadorship />} />
-                <Route path="/ambassadorship/category/:id" element={<Ambassadorship />} />
+                <Route path="/ambassadorship/category/:id" element={<AmbassadorCategory />} />
                 <Route path='/requisites' element={<PropsCategoryDetails/>} />
                 <Route path='/ambassadorship/company/:id' element={<CompanyDetail/>} />
                 <Route path="/community" element={<Community />} />
@@ -33,7 +33,6 @@ function App() {
                 <Route path="/membership" element={<Membership />} />
                 <Route path="/participation" element={<Participation />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/services/detail" element={<ServiceDetail />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/news/:id" element={<News />} />
             </Routes>

@@ -16,17 +16,19 @@ const CategoryBlock = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-
-
     axios("https://new-usta.webtm.ru/api/v1/ambassadorship/category/").then(
       ({ data }) => {
-
-
         setCategoryData(data)
       }
     );
   }, []);
+  // useEffect(()=>{
+  //   document.querySelector('.ambassador-category-menu-bg')
+  //   .style.height = document.body.scrollHeight
+  // }, [showMenu])
+
   return (
+   <>
     <div className="ambassador-category-menu">
       <div className="ambassador-category-menu-head">
         <h3 className="ambassador-category-menu-head-title">
@@ -39,6 +41,8 @@ const CategoryBlock = () => {
         <button
           onClick={() => {
             setShowMenu(!showMenu);
+
+
           }}
           className="ambassador-category-menu-head-btn"
         >
@@ -83,7 +87,7 @@ const CategoryBlock = () => {
           onClick={() => {
             setShowMenu(false);
             dispatch(setSelectedCategory("all"));
-            navigate('/services/detail');
+            navigate('/ambassadorship');
           }}
         >
           <img
@@ -127,6 +131,26 @@ const CategoryBlock = () => {
         })}
       </div>
     </div>
+
+    <div className="ambassador-category-menu-bg"
+      onClick={()=>{
+        setShowMenu(false)
+      }}
+    style={{
+      position: 'fixed',
+      width: '100%',
+      height: '100vh',
+      zIndex: '4',
+      top: '0',
+      left: '0',
+      display: showMenu
+      ? 'block'
+      : 'none'
+    }}
+    >
+
+    </div>
+   </>
   );
 };
 

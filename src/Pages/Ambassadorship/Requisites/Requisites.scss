@@ -11,3 +11,20 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .company-detail-requisites{
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 576px){
+
+    .company-detail-requisites-item{
+        column-gap: 20px;
+    }
+    .company-detail-requisites-item-name,
+    .company-detail-requisites-item-value{
+        font-size: 14px;
+    }
+}

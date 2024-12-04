@@ -82,7 +82,7 @@
         cursor: pointer;
 
         &__img {
-          width: 310px;
+          width: 90%;
           height: 240px;
           border-radius: 20px;
           object-fit: cover;
@@ -139,7 +139,11 @@
       display: flex;
       flex-wrap: wrap;
       width: 660px;
+      // padding: 20px;
       gap: 20px;
+      img{
+        width: calc(50% - 20px);
+      }
     }
 
     &-imagesAlt {
@@ -147,12 +151,12 @@
       flex-wrap: wrap;
       width: 660px;
       gap: 20px;
+
     }
 
     &-text,
     &-text-alt {
       width: 640px;
-      padding: 0px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -228,6 +232,8 @@
         }
       }
     }
+
+
   }
 
   .InfoBlock {
@@ -413,18 +419,7 @@
 @media screen and (max-width: 1400px) {
   .home {
     .main-screen {
-      // position: fixed;
-      // top: 0;
-      display: flex;
-      flex-direction: column;
-      align-content: end;
-      justify-content: end;
-      width: 100%;
-      height: 100vh;
-      background-image: url(../../Shared/Images/image-bg.png);
-      padding: 70px 75px 150px;
-      //background-repeat: round;
-      gap: 40px;
+
 
       &-head {
         height: auto;
@@ -518,7 +513,6 @@
           width: 310px;
 
           &__img {
-            width: 310px;
             height: 240px;
             border-radius: 20px;
             object-fit: cover;
@@ -574,7 +568,7 @@
       &-images {
         display: flex;
         flex-wrap: wrap;
-        width: 465px;
+        width: 50%;
         height: 490px;
         gap: 10px;
 
@@ -584,8 +578,10 @@
             display: none;
           }
 
-          width: 465px;
+          width: 100%;
           height: 240px;
+          object-fit: cover;
+          border-radius: 20px;
         }
       }
 
@@ -619,6 +615,26 @@
           margin-bottom: 45px;
         }
 
+        &-text {
+          height: 300px;
+          overflow-y: scroll;
+          overflow-x: visible;
+          margin-top: 20px;
+          font-family: Helvetica;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 17.6px;
+          letter-spacing: -0.04em;
+          text-align: left;
+
+          ul {
+            padding: 0px 20px;
+          }
+
+          ol {
+            padding: 0px 20px;
+          }
+        }
         div {
           h1 {
             font-family: Helvetica;
@@ -631,7 +647,7 @@
             text-decoration-skip-ink: none;
             p {
               font-family: Helvetica;
-              font-size: 25px;
+              font-size: 16px;
               font-weight: bold;
               line-height: 25px;
               letter-spacing: -0.04em;
@@ -652,26 +668,7 @@
             text-decoration-skip-ink: none;
           }
 
-          p {
-            height: 300px;
-            overflow-y: scroll;
-            overflow-x: visible;
-            margin-top: 20px;
-            font-family: Helvetica;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 17.6px;
-            letter-spacing: -0.04em;
-            text-align: left;
 
-            ul {
-              padding: 0px 20px;
-            }
-
-            ol {
-              padding: 0px 20px;
-            }
-          }
         }
 
         &-btn {
@@ -701,13 +698,15 @@
       gap: 10px;
 
       &-img {
-        width: 467px;
+        width: 50%;
         height: 407px;
         border-radius: 20px;
 
         img {
-          width: 467px;
-          height: 407px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
         }
       }
 
@@ -850,66 +849,24 @@
   }
 }
 
+@media screen and (max-width: 1200px){
+  .home .InfoBlock-img{
+    height: 250px;
+  }
+  .home .InfoBlock-text h1 p{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .home .bigBlock-text {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .home {
-    .main-screen {
-      // position: fixed;
-      // top: 0;
-      display: flex;
-      flex-direction: column;
-      align-content: end;
-      justify-content: end;
-      width: 100%;
-      height: 100vh;
-      background-image: url(../../Shared/Images/image-bg.png);
-      padding: 70px 75px 150px;
-      //background-repeat: round;
-      gap: 40px;
 
-      &-head {
-        height: auto;
-        width: 70%;
-        color: white;
-        font-family: Helvetica;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 40px;
-        letter-spacing: -0.06em;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        margin-bottom: 20px;
-      }
-
-      &-text {
-        height: auto;
-        width: 70%;
-        color: white;
-        font-family: Helvetica;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        margin-bottom: 40px;
-      }
-
-      &-btn {
-        padding: 20px 90px;
-        background-color: #fff;
-        color: #001c7c;
-        font-family: Helvetica;
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        border-radius: 20px;
-        width: max-content;
-      }
-    }
 
     .slider {
       &-row {
@@ -1014,12 +971,12 @@
     .bigBlock {
       display: flex;
       justify-content: center;
-
+      flex-wrap: wrap;
       &-images {
         display: flex;
         flex-wrap: wrap;
-        width: 357px;
-        height: 490px;
+        width: 100%;
+        height: auto;
         gap: 10px;
 
         img {
@@ -1027,9 +984,7 @@
           &:nth-child(4) {
             display: none;
           }
-
-          width: 357px;
-          height: 240px;
+          height: 300px;
         }
       }
 
@@ -1047,12 +1002,12 @@
       }
 
       &-text {
-        width: 640px;
-        padding: 0px 20px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        margin-top: 20px;
+        padding: 0;
         &-head {
           font-family: Helvetica;
           font-size: 40px;
@@ -1063,6 +1018,26 @@
           margin-bottom: 45px;
         }
 
+        &-text {
+          height: 300px;
+          overflow-y: scroll;
+          overflow-x: visible;
+          margin-top: 20px;
+          font-family: Helvetica;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 17.6px;
+          letter-spacing: -0.04em;
+          text-align: left;
+
+          ul {
+            padding: 0px 20px;
+          }
+
+          ol {
+            padding: 0px 20px;
+          }
+        }
         div {
           h1 {
             font-family: Helvetica;
@@ -1097,32 +1072,12 @@
             text-decoration-skip-ink: none;
           }
 
-          p {
-            height: 300px;
-            overflow-y: scroll;
-            overflow-x: visible;
-            margin-top: 20px;
-            font-family: Helvetica;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 17.6px;
-            letter-spacing: -0.04em;
-            text-align: left;
 
-            ul {
-              padding: 0px 20px;
-            }
-
-            ol {
-              padding: 0px 20px;
-            }
-          }
         }
       }
 
       &-text-alt {
         width: 640px;
-        padding: 0px 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1208,15 +1163,16 @@
       width: 100%;
       display: flex;
       gap: 10px;
-
+      flex-wrap: wrap;
       &-img {
-        width: 60%;
+        width: 100%;
         height: 360px;
         border-radius: 20px;
 
         img {
           width: 100%;
           height: 360px;
+
         }
       }
 
@@ -1224,7 +1180,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 50%;
+        width: 100%;
 
         h1 {
           font-family: Helvetica;

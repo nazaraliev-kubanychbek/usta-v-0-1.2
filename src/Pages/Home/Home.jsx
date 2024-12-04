@@ -1,16 +1,13 @@
 ﻿import { useEffect, useState } from "react";
-import axios from "axios";
-
+import axios from "axios"
 import "./Home.scss";
-
 import BigBlocks from "./Blocks/BigBlock";
 import InfoBlocks from "./Blocks/InfoBlock";
 import ServiceTab from "../../Widgets/ServicesTab";
-
-import { PartnersTab, Slider } from "./CardEvent";
-
+import { Slider } from "./CardEvent";
 import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
+import PartnerSlider from "../../Widgets/ui/PartnerSlider/PartnerSlider";
 
 function Home() {
   const lang = useSelector((s) => s.reducer.lang);
@@ -44,24 +41,12 @@ function Home() {
       });
   }, []);
 
-  const [ambasData, setAmbasData] = useState([]);
+
 
   //------------------------------------------------------------------------
 
-  useEffect(() => {
-    axios
-      .get(`${URL_API}api/v1/community/partners/`)
-      .then((response) => {
-        setAmbasData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
 
-  const images = ambasData.map((partner) => partner.image);
 
-  const partners = images.map((image) => ({ img: image }));
 
   //console.log(partners);
 
@@ -147,14 +132,14 @@ function Home() {
         <div className="container">
 
             <div className="page-main-text-block">
-              <div className="main-screen-head page-title">
+              <div className="page-title">
                 {lang === "ru"
                   ? data.title_ru
                   : lang === "en"
                   ? data.title_en
                   : data.title_ky}
               </div>
-              <div className="main-screen-text page-description">
+              <div className="page-description">
                 {lang === "ru"
                   ? data.description_ru
                   : lang === "en"
@@ -191,7 +176,7 @@ function Home() {
 <ServiceTab URL="api/v1/base/service/" />
 </section>
             <section className="section">
-            <PartnersTab partners={partners} />
+            <PartnerSlider />
             </section>
             <section className="section">
             <BigBlocks mode="json" URL="api/v1/base/section/" />

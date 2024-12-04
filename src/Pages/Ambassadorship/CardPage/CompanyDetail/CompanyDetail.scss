@@ -71,3 +71,17 @@
     }
 
 }
+
+
+@media screen and (max-width: 576px){
+    .company-detail-contact-item-text{
+        font-size: 14px;
+    }
+    .company-detail-download-btn {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    .company-detail-contact{
+        width: 100%;
+    }
+}

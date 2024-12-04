@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
 import "./Ambassadorship.scss";
 import CategoryBlock from "./CategoryBlock/CategoryBlock";
-import AmbassadorList from "./AmbassadorList/AmbassadorList";
+import AmbassadorServices from "./AmbassadorServices/AmbassadorServices";
+import AmbassadorList from './AmbassadorList/AmbassadorList';
 
 function Ambassadorship() {
   const lang = useSelector((s) => s.reducer.lang);
@@ -58,40 +59,44 @@ function Ambassadorship() {
 
         </div>
       </div>
+
       <div className="container">
-        <div className="main-screen-blockAlt">
-          <div
-            className="main-screen-headAlt"
-            dangerouslySetInnerHTML={{
-              __html:
-                lang === "ru"
-                  ? data.title_ru
-                  : lang === "en"
-                  ? data.title_en
-                  : data.title_ky,
-            }}
-          ></div>
-          <div
-            className="main-screen-textAlt"
-            dangerouslySetInnerHTML={{
-              __html:
-                lang === "ru"
-                  ? data.description_ru
-                  : lang === "en"
-                  ? data.description_en
-                  : data.description_ky,
-            }}
-          ></div>
-        </div>
+      <div className="page-main-text-block-mobile">
+              <h1
+                className="page-title-mobile"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    lang === "ru"
+                      ? data.title_ru
+                      : lang === "en"
+                      ? data.title_en
+                      : data.title_ky,
+                }}
+              ></h1>
+              <p
+                className="page-description-mobile"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    lang === "ru"
+                      ? data.description_ru
+                      : lang === "en"
+                      ? data.description_en
+                      : data.description_ky,
+                }}
+              ></p>
+            </div>
 
         <section className="section">
         <CategoryBlock />
         </section>
 
             <section className="section">
-            <AmbassadorList />
+              <AmbassadorServices />
             </section>
 
+            <section className="section">
+              <AmbassadorList />
+            </section>
 
 
 

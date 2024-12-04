@@ -29,6 +29,7 @@ const Slider = ({url, list}) => {
     } else {
       setSlides(list)
       setLoading(false)
+
     }
   }, [list, url]);
 
@@ -104,11 +105,22 @@ const Slider = ({url, list}) => {
                   ? ''
                   : localizedDescription(slide)} />
                 {/* Удаляем HTML-теги из описания */}
-                <p className="slide-item-p">{
-                  list.length > 0
-                  ? ''
-                  : localizedDescription(slide)
-                  }</p>
+                {
+                  slide.date
+                  ? <p className="slide-item-date">
+                    {slide.date}
+                  </p>
+                  : ''
+                }
+                <p className="slide-item-p"
+                dangerouslySetInnerHTML={{__html:
+                  lang === 'ru'
+                  ? slide.description
+                  : lang === 'en'
+                  ? slide.description_en
+                  : slide.description_ky
+                }}
+                ></p>
               </div>
             </SwiperSlide>
           ))}

@@ -8,6 +8,7 @@ import arrow from "../img/arrow.png";
 const HeaderMobile = ({ showBurger, setShowBurger }) => {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
+
   const dispatch = useDispatch();
   const lang = useSelector((s) => s.reducer.lang);
 

@@ -1,6 +1,7 @@
 .ambassador-category-menu {
     width: 400px;
     position: relative;
+    z-index: 5;
     &-head {
         background: #616161;
         width: 400px;
@@ -36,6 +37,7 @@
         position: absolute;
         width: 100%;
         top: 60px;
+        cursor: pointer;
         &-item{
             height: 60px;
             display: flex;
@@ -45,5 +47,13 @@
             padding: 10px;
             box-shadow: 0px 0px 10px -8px rgba(0,0,0,0.75);
         }
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .ambassador-category-menu ,
+    .ambassador-category-menu-head {
+      width: 100%;
     }
 }

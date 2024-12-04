@@ -1,8 +1,41 @@
 .Services {
-    .Services-h1{
+
+
+    &-reverse-row {
+        flex-direction: row-reverse;
+    }
+
+    &-list-img {
+        width: 100%;
+        height: 350px;
+        object-fit: scale-down;
+
+    }
+
+    &-list {
+       &-title {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 138%;
+        }
+
+        &-description {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 110%;
+            letter-spacing: -0.04em;
+            margin-top: 20px;
+            color: gray;
+        }
+    }
+
+
+
+    .Services-h1 {
         text-transform: uppercase;
         font-size: 26px;
     }
+
     .mainscreen {
         height: 100vh;
         background-size: cover;
@@ -63,19 +96,19 @@
     padding-top: 100px;
 }
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
     .Services .mainscreen {
         padding-top: 400px;
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .Services .mainscreen {
         padding-top: 350px;
     }
 
-.Services .mainscreen-text__p{
-font-size: 20px;
+    .Services .mainscreen-text__p {
+        font-size: 20px;
     }
 }
 
@@ -90,11 +123,28 @@ font-size: 20px;
     .Services-img-card {
         height: 150px;
     }
-    .Services .mainscreen-text__h1{
+
+    .Services .mainscreen-text__h1 {
         font-size: 34px;
     }
+
     .Services-h1 {
         font-size: 16px;
+    }
+    .Services-list-title{
+        font-size: 18px;
+        *{
+            font-size: 18px;
+        }
+    }
+    .Services-list-description{
+        font-size: 17px;
+        *{
+            font-size: 17px;
+        }
+    }
+    .Services-list-img {
+        height: 250px;
     }
 }
 
@@ -103,8 +153,9 @@ font-size: 20px;
         .padding-100px {
             padding: 15px 0;
         }
+
         .Services-h1 {
-        font-size: 16px;
+            font-size: 16px;
         }
     }
 
@@ -117,24 +168,28 @@ font-size: 20px;
 
 }
 
-@media screen and (max-width: 576px){
-    .Services{
+@media screen and (max-width: 576px) {
+    .Services {
         .InfoBlock {
             flex-wrap: wrap;
+
             &-img,
-            &-text{
+            &-text {
                 width: 100%;
             }
         }
 
     }
+
     .Services-h1 {
         font-size: 16px;
     }
-    .Services .mainscreen-text__h1{
+
+    .Services .mainscreen-text__h1 {
         font-size: 34px;
     }
-    .Services .mainscreen-text__p{
+
+    .Services .mainscreen-text__p {
         font-size: 14px;
-            }
+    }
 }

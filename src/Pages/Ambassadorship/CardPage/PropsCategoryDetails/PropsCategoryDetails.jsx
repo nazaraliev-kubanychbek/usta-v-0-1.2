@@ -5,6 +5,7 @@ import axios from "axios";
 import { URL_API } from "../../../../Futures/URLAPI";
 import { useSelector } from "react-redux";
 import AmbassadorList from "../../AmbassadorList/AmbassadorList";
+import CategoryBlock from './../../CategoryBlock/CategoryBlock';
 
 function PropsCategoryDetails() {
   const [data, setData] = useState({});
@@ -18,14 +19,14 @@ function PropsCategoryDetails() {
   return (
     <div className="props">
       <div
-        className="props-banner"
+        className="page-banner"
         style={{
           backgroundImage: `url(${data.banner_image})`,
         }}
       >
         <div className="container">
-        <div className="props-text-block">
-          <h1 className="props-title"
+        <div className="page-main-text-block">
+          <h1 className="page-title"
           dangerouslySetInnerHTML={{__html:
             lang === 'ru'
             ? data.title
@@ -34,7 +35,7 @@ function PropsCategoryDetails() {
             : data.title_ky
           }}
           ></h1>
-          <p className="props-text"
+          <p className="page-description"
            dangerouslySetInnerHTML={{__html:
             lang === 'ru'
             ? data.banner_description
@@ -45,8 +46,44 @@ function PropsCategoryDetails() {
           ></p>
         </div>
         </div>
+
+
       </div>
-      <Requisites data={data} />
+
+      <div className="container">
+        <div className="page-main-text-block-mobile">
+          <h1 className="page-title-mobile"
+          dangerouslySetInnerHTML={{__html:
+            lang === 'ru'
+            ? data.title
+            : lang === 'en'
+            ? data.title_en
+            : data.title_ky
+          }}
+          ></h1>
+          <p className="page-description-mobile"
+           dangerouslySetInnerHTML={{__html:
+            lang === 'ru'
+            ? data.banner_description
+            : lang === 'en'
+            ? data.banner_description_en
+            : data.banner_description_ky
+          }}
+          ></p>
+        </div>
+        </div>
+
+          <section className="section">
+           <div className="container">
+           <CategoryBlock />
+           </div>
+          </section>
+
+          <section className="section">
+          <Requisites data={data} />
+          </section>
+
+
       <div className="container">
       <AmbassadorList />
       </div>

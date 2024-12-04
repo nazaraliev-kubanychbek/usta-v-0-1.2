@@ -43,7 +43,6 @@
   line-height: 19.8px;
   letter-spacing: -0.04em;
   width: 640px;
-  height: 100px;
   padding-top: 14px;
   color: #00000080;
   width: 100%;
@@ -341,17 +340,6 @@
   }
 
 
-
-  .member-main-title {
-    width: 386px;
-    height: 25px;
-    font-family: Helvetica;
-    font-size: 29px;
-    font-weight: 400px;
-    line-height: 25px;
-    letter-spacing: -0.04em;
-  }
-
   .member-category {
     margin-right: 0px;
   }
@@ -366,16 +354,9 @@
   .member-block-category-text {
     width: 176px;
     margin-top: 20px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Helvetica;
     font-size: 15px;
     font-weight: 400;
     line-height: 16.5px;
-    letter-spacing: -0.04em;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 
   }
 
@@ -384,16 +365,10 @@
     height: 35px;
     margin-top: 30px;
     margin-left: 40px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Helvetica;
     font-size: 25px;
     font-weight: 400;
     line-height: 34.5px;
-    letter-spacing: -0.04em;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 
   }
 
@@ -429,26 +404,16 @@
 
   .member-body-title {
     width: 359px;
-    height: 50px;
-    top: 1141px;
-    left: 389px;
-    gap: 0px;
-    opacity: 0px;
     //styleName: Tablet Типографика/Заголовок 3;
     font-family: Helvetica;
     font-size: 25px;
     font-weight: 400px;
     line-height: 25px;
-    letter-spacing: -0.04em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 
   }
 
   .member-body-text {
     width: 100%;
-    height: 98px;
     margin-top: 15px;
     top: 1206px;
     left: 389px;
@@ -470,37 +435,18 @@
 
   .member-body-text1 {
     width: 100%;
-    height: 98px;
     margin-top: 35px;
-    top: 1206px;
-    left: 389px;
-    gap: 0px;
-    opacity: 0px;
-    //styleName: Tablet Типографика/описание 4;
-    font-family: Helvetica;
     font-size: 14px;
     font-weight: 400;
-    line-height: 14px;
     letter-spacing: -0.04em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
-
   }
 
   .member-body-text {
     width: 450px;
-    height: 98px;
     margin-top: 20px;
   }
 
   .member-body-title {
-    height: 25px;
-    top: 1578.86px;
-    gap: 0px;
-    opacity: 0px;
-    margin-top: 1px;
     word-break: break-word;
     /* или */
     white-space: pre-wrap;
@@ -788,14 +734,6 @@
 
   }
 
-  .member-body-text1 {
-    // margin-left: 100px;
-    width: 350px;
-    height: 86px;
-    margin-top: 25%;
-
-  }
-
   .member-text {
     width: 100%;
   }
@@ -813,33 +751,24 @@
   }
 
   .member-body-title {
-    // margin-left: 100px;
+  font-size: 18px;
+  line-height: 110%;
     width: 100%;
   }
 
   .member-body-text {
-    // margin-left: 100px;
+  padding-top: 0;
     width: 100%;
 
   }
 
 
   .member-steps {
-    // display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Создаём 2 колонки */
+
     flex-wrap: wrap;
-    // margin-left: 70px;
-    // display: flex;
-    // flex-direction: column-reverse;
-    // gap: 0; /* Убираем промежуток между блоками */
   }
 
-  // .block:nth-child(3), .block:nth-child(4) {
-  //   grid-row: 2;
-  //   // margin-left: 0px;
-  //   /* Блоки 3 и 4 будут располагаться во втором ряду */
-  // }
+
 
   .block {
     width: 174px;
@@ -849,7 +778,9 @@
   }
 
   .member-body-text1 {
+    padding-top: 0;
     width: 100%;
+    margin-top: 25px;
   }
 
   .member-block-category-text {
@@ -883,9 +814,7 @@
     width: 100%;
   }
 
-  .col-6 {
-    width: 100%;
-  }
+
 
   .row-alim {
     width: 100%;
@@ -938,9 +867,7 @@
     .text {
       order: 2;
 
-      h1 {
-        margin-bottom: 40px;
-      }
+
     }
   }
 
@@ -948,43 +875,33 @@
     flex-wrap: wrap;
   }
 
-  .img2 {
-    order: 2;
-  }
+
+
+
 
   .member-body-title {
-    order: 1;
-  }
-
-  .member-body-title {
-    height: 66px;
-    font-family: Helvetica;
     font-size: 24px;
-    font-weight: 400px;
     line-height: 33.12px;
     text-align: left;
-
+    margin-top: 20px;
     word-break: break-word;
-    /* или */
     white-space: pre-wrap;
   }
 
   .member-body-text {
     width: 100%;
-    height: 105px;
     font-family: Helvetica;
     font-size: 14px;
     font-weight: 400;
     line-height: 15.4px;
     letter-spacing: -0.04em;
-    margin-top: -10px;
+    margin-top: 10px;
   }
 
   .img1 {
     width: 100%;
-    // height: 212px;
     object-fit: cover;
-    margin-top: 100px;
+    margin-top: 50px;
 
   }
 
@@ -1000,9 +917,8 @@
   .img2 {
     margin: 0px;
     width: 100%;
-    margin-top: 100px;
-    // height: 212px;
-    order: 2;
+    margin-top: 50px;
+
 
   }
 
@@ -1049,13 +965,10 @@
   .member-body-text1 {
     width: 100%;
     margin: 0px;
-    height: 135px;
-    font-family: Helvetica;
     font-size: 14px;
     font-weight: 400;
     line-height: 15.4px;
     letter-spacing: -0.04em;
-    // margin-top: -30px;
 
   }
 

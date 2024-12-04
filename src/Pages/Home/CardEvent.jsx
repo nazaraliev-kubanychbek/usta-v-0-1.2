@@ -102,8 +102,18 @@ function Slider({ name, cards = [] }) {
             className="slider-cards"
             ref={swiperRef}
             spaceBetween={spaceBetween}
-            slidesPerView={slidesPerView}
+            slidesPerView={4}
             loop
+            breakpoints={{
+              260: { slidesPerView: 1, spaceBetween: 40 },
+              360: { slidesPerView: 1, spaceBetween: 20 },
+              480: { slidesPerView: 1.4, spaceBetween: 20 },
+              570: { slidesPerView: 1.6, spaceBetween: 20 },
+              992: { slidesPerView: 2.3, spaceBetween: 40 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
+              1220: { slidesPerView: 3.5, spaceBetween: 20 },
+              1420: { slidesPerView: 4, spaceBetween: 20 },
+            }}
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index}>
@@ -149,11 +159,14 @@ function BigBlock({
   btn,
   URL,
   reversed,
+  see_more,
+  see_more_en,
+  see_more_ky
 }) {
   const SubheadTag = subheadTag;
   const lang = useSelector((s) => s.reducer.lang);
   return (
-    <div  className="row-gap-150">
+    <div  className="row-gap-60">
       <div className="container">
         <h1 className="bigBlock-text-head">{head}</h1>
         <div className={`bigBlock ${reversed === "true" ? "reverse" : ""}`}>
@@ -166,19 +179,23 @@ function BigBlock({
           <div className="bigBlock-text">
             <div>
               <h1 dangerouslySetInnerHTML={{ __html: subhead}}></h1>
-              <p dangerouslySetInnerHTML={{ __html: p }} />
+              <p className="bigBlock-text-text" dangerouslySetInnerHTML={{ __html: p }} />
             </div>
-            {btn === "true" && (
+            {btn ? (
               <div className="bigBlock-text-btn">
-                <a href={URL}>
-                  {lang === "ru"
-                    ? "Подробнее"
+                <a href={URL}
+                dangerouslySetInnerHTML={{
+                  __html: lang === "ru"
+                    ? see_more
                     : lang === "en"
-                    ? "See more"
-                    : "көбүрөөк маалымат"}
+                    ? see_more_en
+                    : see_more_ky}
+                }
+                >
+
                 </a>
               </div>
-            )}
+            ) : ''}
           </div>
         </div>
       </div>
@@ -186,92 +203,6 @@ function BigBlock({
   );
 }
 
-//function BigBlockAlt({ head, img1, img2, img3, img4, subhead, subheadTag = "h1", p, btn, URL }) {
-//    const SubheadTag = subheadTag; // Dynamic tag based on prop
-
-//    return (
-//        <div className="padding-100px">
-//            <div className="container">
-//                <h1 className="bigBlock-text-head">{head}</h1>
-//                <div className="bigBlock">
-//                    <div className="bigBlock-imagesAlt">
-//                        {img1 && <img src={img1} alt="big block image 1" />}
-//                        {img2 && <img src={img2} alt="big block image 2" />}
-//                        {img3 && <img src={img3} alt="big block image 3" />}
-//                        {img4 && <img src={img4} alt="big block image 4" />}
-//                    </div>
-//                    <div className="bigBlock-text-alt">
-//                        <div>
-//                            <SubheadTag style={{ marginBlock: "0px", marginBlockStart: "0px", marginBlockEnd: "0px", margin: "0px" }}>{subhead}</SubheadTag>
-//                            <p dangerouslySetInnerHTML={{ __html: p }} />
-//                        </div>
-//                        {btn === "true" && (
-//                            <div className="bigBlock-text-btn"><a href={URL}>РџРћР”Р РћР‘РќР•Р•</a></div>
-//                        )}
-//                    </div>
-//                </div>
-//            </div>
-//        </div>
-//    );
-//}
-
-//function BigBlockAltReverse({ head, img1, img2, img3, img4, subhead, subheadTag = "h1", p, btn, URL }) {
-//    const SubheadTag = subheadTag; // Dynamic tag based on prop
-
-//    return (
-//        <div className="padding-100px">
-//            <div className="container">
-//                <h1 className="bigBlock-text-head">{head}</h1>
-//                <div className="bigBlock reverse">
-//                    <div className="bigBlock-imagesAlt">
-//                        {img1 && <img src={img1} alt="big block image 1" />}
-//                        {img2 && <img src={img2} alt="big block image 2" />}
-//                        {img3 && <img src={img3} alt="big block image 3" />}
-//                        {img4 && <img src={img4} alt="big block image 4" />}
-//                    </div>
-//                    <div className="bigBlock-text-alt">
-//                        <div>
-//                            <SubheadTag style={{ marginBlock: "0px", marginBlockStart: "0px", marginBlockEnd: "0px", margin: "0px" }}>{subhead}</SubheadTag>
-//                            <p dangerouslySetInnerHTML={{ __html: p }} />
-//                        </div>
-//                        {btn === "true" && (
-//                            <div className="bigBlock-text-btn"><a href={URL}>РџРћР”Р РћР‘РќР•Р•</a></div>
-//                        )}
-//                    </div>
-//                </div>
-//            </div>
-//        </div>
-//    );
-//}
-
-//function BigBlockReverse({ head, img1, img2, img3, img4, subhead, subheadTag = "h1", p, btn, URL }) {
-//    const SubheadTag = subheadTag;
-
-//    return (
-//        <div className="padding-100px">
-//            <div className="container">
-//                <h1 className="bigBlock-text-head">{head}</h1>
-//                <div className="bigBlock reverse">
-//                    <div className="bigBlock-images">
-//                        {img1 && <img src={img1} alt="big block image 1" />}
-//                        {img2 && <img src={img2} alt="big block image 2" />}
-//                        {img3 && <img src={img3} alt="big block image 3" />}
-//                        {img4 && <img src={img4} alt="big block image 4" />}
-//                    </div>
-//                    <div className="bigBlock-text">
-//                        <div>
-//                            <SubheadTag style={{ marginBlock: "0px", marginBlockStart: "0px", marginBlockEnd: "0px", margin: "0px" }}>{subhead}</SubheadTag>
-//                            <p dangerouslySetInnerHTML={{ __html: p }} />
-//                        </div>
-//                        {btn === "true" && (
-//                            <div className="bigBlock-text-btn"><a href={URL}>РџРћР”Р РћР‘РќР•Р•</a></div>
-//                        )}
-//                    </div>
-//                </div>
-//            </div>
-//        </div>
-//    );
-//}
 
 function InfoBlock({ head, p, InfoImg, URL, reversed }) {
   const reversedStyle = reversed === "true" ? { textAlign: "right" } : {};
@@ -302,28 +233,7 @@ function InfoBlock({ head, p, InfoImg, URL, reversed }) {
   );
 }
 
-//function InfoBlockReverse({ head, p, InfoImg, URL }) {
-//    return (
-//        <div className="padding-100px">
-//            <div className="container">
-//                <div
-//                    className="InfoBlock reverse"
-//                >
-//                    <div className="InfoBlock-img">
-//                        <img src={InfoImg} />
-//                    </div>
-//                    <div className="InfoBlock-text">
-//                        <h1 style={{ textAlign: "right" }}>{head}</h1>
-//                        <p style={{ textAlign: "right" }}>{p}</p>
-//                        <div className="InfoBlock-text-btn" style={{ textAlign: "right" }}>
-//                            <a href={URL}>РџРћР”Р РћР‘РќР•Р•</a>
-//                        </div>
-//                    </div>
-//                </div>
-//            </div>
-//        </div>
-//    );
-//}
+
 
 function Partners({ img }) {
   return (
@@ -340,7 +250,7 @@ import "swiper/css/pagination";
 
 function PartnersTab({ partners = [] }) {
   const [PartnersPerView, setPartnersPerView] = useState(7);
-  const [spaceBetween, setSpaceBetween] = useState(30);
+  const [spaceBetween, setSpaceBetween] = useState(20);
   const swiperRef = useRef(null);
 
   useEffect(() => {

@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-
-import Partners from '../../Shared/Components/Partners/Partners';
 import Slider from './ui/Slider';
 import './Community.scss';
 import Index from './ui/index';
-import { URL_API } from '../../Futures/URLAPI'
+import { URL_API } from '../../Futures/URLAPI';
+import PartnerSlider from '../../Widgets/ui/PartnerSlider/PartnerSlider';
 
 const stripHTML = (htmlString) => {
   const doc = new DOMParser().parseFromString(htmlString, 'text/html');
@@ -50,6 +49,18 @@ function Community() {
           </div>
         </div>
       </div>
+
+    <div className="container">
+    <div className="page-main-text-block-mobile">
+            <h1 className=" page-title-mobile">
+              {getLocalizedText(communityData, lang, "title")}
+            </h1>
+            <p className=" page-description-mobile">
+              {getLocalizedText(communityData, lang, "description")}
+            </p>
+          </div>
+    </div>
+
       <div className="container">
         <section className='section'>
         <Slider />
@@ -58,7 +69,7 @@ function Community() {
         <Slider />
         </section>
         <section className='section'>
-        <Partners />
+        <PartnerSlider />
         </section>
         <section className='section'>
         <Index />

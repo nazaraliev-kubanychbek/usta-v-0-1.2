@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import "./Header.scss";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "../../Images/logo.svg";
 import burgerOpenIcon from "./img/burger-icon-open.svg";
 import burgerCloseIcon from "./img/burger-icon-close.svg";
@@ -77,9 +77,12 @@ function Header() {
           {!scrolled ? (
             <>
               <div className="Header-topline">
+                <Link to={'/'} >
                 <div className="Header-topline__logo">
                   <img src={Logo} alt="Logo" />
                 </div>
+                </Link>
+
                 <div className="Header-topline__options">
                   <p
                     className="Header-topline__options-text"
@@ -266,9 +269,12 @@ function Header() {
             </>
           ) : (
             <>
-              <div className="Header-scrolled-topline__logo">
+            <Link to={'/'}>
+            <div className="Header-scrolled-topline__logo">
                 <img src={Logo} alt="Logo" />
               </div>
+            </Link>
+
               <div className="Header-scrolled-elements">
                 <div className="Header-scrolled-topline">
                   <div className="Header-scrolled-topline__options">

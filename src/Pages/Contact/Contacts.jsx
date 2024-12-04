@@ -2,7 +2,6 @@ import "./Contacts.scss";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ContactBanner from "./Banner_contact.png";
 
 import { URL_API } from "../../Futures/URLAPI";
 
@@ -67,11 +66,11 @@ function Contacts() {
     <div className="Contact">
       <div >
         <div
-          className="page-banner"
+          className="page-banner Contact-banner"
           style={{ backgroundImage: `url(${banner.banner})` }}
         >
          <div className="container">
-         <div className="page-main-text-block">
+         <div className="page-main-text-block Contact-banner-text-block">
           <h1
             className="page-title"
             dangerouslySetInnerHTML={{
@@ -90,53 +89,34 @@ function Contacts() {
       </div>
       <section className="section">
       <div className="container">
-        <div className="Contact-list-label">{lang === "ru" ? "ЧТОБЫ СВЯЗАТЬСЯ С НАМИ:" : lang === "en" ? "TO CONTACT US:" : "БИЗ БАЙЛАНЫШЫШ ҮЧҮН:" }</div>
+        <div className="Contact-list-label section-title">{lang === "ru" ? "ЧТОБЫ СВЯЗАТЬСЯ С НАМИ:" : lang === "en" ? "TO CONTACT US:" : "БИЗ БАЙЛАНЫШЫШ ҮЧҮН:" }</div>
         <div className="Contact-list">
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
               <img src={mail.icon} />
             </div>
-            <div
-              className="Contact-list-block__title"
-              dangerouslySetInnerHTML={{
-                __html:
-                  lang === "ru"
-                    ? mail.title
-                    : lang === "en"
-                    ? mail.title_en
-                    : mail.title_ky,
+
+            <div className="Contact-list-block__text">
+              <a
+              style={{
+                color: '#000',
+                textDecoration: 'none'
               }}
-            ></div>
-            <div className="Contact-list-block__text">{mail.email}</div>
+              href={`mailto: ${mail.email}`}>{mail.email}</a>
+            </div>
           </div>
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
               <img src={phone.icon} />
             </div>
-            <div className="Contact-list-block__title" dangerouslySetInnerHTML={
-              {__html: lang === "ru"
-                ? phone.title
-                : lang === "en"
-                ? phone.title_en
-                : phone.title_ky}}>
-            </div>
+
             <div className="Contact-list-block__text" dangerouslySetInnerHTML={{__html: phone.phone_number}}></div>
           </div>
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
               <img src={address.icon} />
             </div>
-            <div
-              className="Contact-list-block__title"
-              dangerouslySetInnerHTML={{
-                __html:
-                  lang === "ru"
-                    ? address.title
-                    : lang === "en"
-                    ? address.title_en
-                    : address.title_ky,
-              }}
-            ></div>
+
             <div
               className="Contact-list-block__text"
               dangerouslySetInnerHTML={{

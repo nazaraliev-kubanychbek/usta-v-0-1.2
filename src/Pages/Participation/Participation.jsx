@@ -64,8 +64,9 @@ function Participation() {
         </div>
       </div>
 
-      <div className="Particicpation-text-mobile">
-      <h1 className="Participation-text page-title">
+      <div className="container">
+            <div className="page-main-text-block-mobile">
+              <h1 className="page-title-mobile">
                 {
                 lang === 'ru'
                 ? textData.title
@@ -74,14 +75,16 @@ function Participation() {
                  : textData.title_ky
                  }
               </h1>
-              <p className="Participation-title page-description">
+              <p className="page-description-mobile">
                 { lang === 'ru'
                 ? textData.description
                 : lang === 'en'
                 ? textData.description_en
                  : textData.description_ky}
               </p>
-      </div>
+            </div>
+
+        </div>
       <div className="container">
 
 
@@ -120,10 +123,13 @@ function Participation() {
 
         {/* Секция наград */}
         <section className='section'>
-        <div className="Participation-gap">
-          <h3 className="Participation-gap-text">
+          <div className="container">
+          <h3 className="Participation-gap-text section-title">
             {lang === 'ru' ? 'Награды за достижения' : lang === 'en' ? 'Awards for  ' : 'Ийгиликтер үчүн сыйлыктар'}
           </h3>
+          </div>
+        <div className="Participation-gap">
+
           <div className="Participation-awards">
             {Array.isArray(awards) && awards.length > 0 ? (
               <Slider url={`api/v1/projects/awards/`  } list={[]}  />
@@ -138,7 +144,7 @@ function Participation() {
         {/* Секция программ наставничества */}
         <section className='section'>
         <div className="Participation-program">
-          <h1 className="Participation-program-text-h3">
+          <h1 className="Participation-program-text-h3 section-title">
             {lang === 'ru'
               ? 'Программы наставничества'
               : lang === 'en'
@@ -153,7 +159,7 @@ function Participation() {
                     <>
 
                       <div className="col-6">
-                      <img src={program.image} alt={program.title} className="img1" />
+                      <img src={program.image} alt={program.title} className="Participation-program-img1" />
 
                       </div>
 
@@ -177,7 +183,7 @@ function Participation() {
                   ) : (
                     <>
                       <div className="col-6">
-                      <img src={program.image} alt={program.title} className="img1 img1-mobile" />
+                      <img src={program.image} alt={program.title} className="Participation-program-img1 img1-mobile" />
 
 
                         <h3 className="Participation-program-text Participation-program-text2">
@@ -196,7 +202,7 @@ function Participation() {
                         </p>
                       </div>
                       <div className="col-6">
-                      <img src={program.image} alt={program.title} className="img1 img2-by-partipication" />
+                      <img src={program.image} alt={program.title} className="Participation-program-img1 img2-by-partipication" />
                       <h3 className="Participation-program-text Participation-program-text-mobile">
                           {lang === 'ru'
                             ? program.title
@@ -225,7 +231,7 @@ function Participation() {
 
 
       </div>
-    // </div>
+     </div>
   );
 }
 

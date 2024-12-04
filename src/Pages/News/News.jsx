@@ -7,6 +7,7 @@ import { Slider } from "../Home/CardEvent";
 import "./News.scss";
 import { URL_API } from "../../Futures/URLAPI";
 
+
 const News = () => {
     const lang = useSelector((state) => state.reducer.lang);
     const { id } = useParams();
@@ -51,15 +52,21 @@ const News = () => {
 
     return (
         <div className="container">
+
             <div className="News padding-bottom-50px">
                 <div className="News-head">
                     <div className="News-head-header">{lang === "ru" ? "Новости" : lang === "en" ? "News" : "Жаңылыктар"}</div>
                     <div className="News-date">{card.date}</div>
                 </div>
-                <div className="News-content">
-                    <img src={card.img} alt="Card Detail" />
-                    <div className="News-content-text">{card.text}</div>
+
+                <div className="row">
+                <div className="col-6">
+                <img className="News-img" src={card.img} alt="Card Detail" />
                 </div>
+                <div className="col-6">
+                <div className="News-content-text">{card.text}</div>
+                </div>
+            </div>
             </div>
             <Slider name={lang === "ru" ? "Новости" : lang === "en" ? "News" : "Жаңылыктар"} cards={cardDataNews} />
         </div>

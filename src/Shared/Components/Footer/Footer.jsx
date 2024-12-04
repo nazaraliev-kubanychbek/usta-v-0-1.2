@@ -110,7 +110,7 @@ const Footer = () => {
                     }}
                     to="/membership"
                     className={({ isActive }) => (isActive ? "isActive" : "")}
-                   
+
                   >
                     {lang === "ru"
                       ? "Членство"
@@ -134,56 +134,64 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="footer-element-column-mobile">
-              <h1>
-                {lang === "ru"
-                  ? "Навигация"
-                  : lang === "en"
-                  ? "Navigation"
-                  : "Навигация"}
-              </h1>
-              <ul style={{ paddingTop: "43px" }}>
-                <li>
-                  <NavLink
-                    to="/services"
-                    className={({ isActive }) => (isActive ? "isActive" : "")}
-                    onClick={scrollToTop}
-                  >
-                    {lang === "ru"
-                      ? "Услуги"
-                      : lang === "en"
-                      ? "Services"
-                      : "Кызматтар"}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/ambassadorship"
-                    className={({ isActive }) => (isActive ? "isActive" : "")}
-                    onClick={scrollToTop}
-                  >
-                    {lang === "ru"
-                      ? "Амбассадорство"
-                      : lang === "en"
-                      ? "Ambassadorship"
-                      : "Элчилик"}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/participation"
-                    className={({ isActive }) => (isActive ? "isActive" : "")}
-                    onClick={scrollToTop}
-                  >
-                    {lang === "ru"
-                      ? "Участие в проектах"
-                      : lang === "en"
-                      ? "Participation"
-                      : "Катышуу"}
-                  </NavLink>
-                </li>
+            <div className="footer-elements-column">
+              <h3 className="footer-transparent-title">-</h3>
+              <ul>
+              <li>
+                    <NavLink
+                      className={({ isActive }) => (isActive ? "isActive" : "")}
+                      to="/services"
+                    >
+                      {lang === "ru"
+                        ? "Услуги"
+                        : lang === "en"
+                        ? "Services"
+                        : "Кызматтар"}
+                    </NavLink>
+                  </li>
+
+                    <li>
+                    <NavLink
+                    onClick={()=>{
+                      dispatch(setSelectedCategory('all'))
+                    }}
+                      className={({ isActive }) => (isActive ? "isActive" : "")}
+                      to="/ambassadorship"
+                    >
+                      {lang === "ru"
+                        ? "Амбассадорство"
+                        : lang === "en"
+                        ? "Ambassadorship"
+                        : "Элчилик"}
+                    </NavLink>
+                    </li>
+                    <li>
+                    <NavLink
+                      className={({ isActive }) => (isActive ? "isActive" : "")}
+                      to="/participation"
+                    >
+                      {lang === "ru"
+                        ? "Участие в проектах"
+                        : lang === "en"
+                        ? "Participation"
+                        : "Катышуу"}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={({ isActive }) => (isActive ? "isActive" : "")}
+                      to="/contacts"
+                    >
+                      {lang === "ru"
+                        ? "Контакты"
+                        : lang === "en"
+                        ? "Contacts"
+                        : "Байланыштар"}
+                    </NavLink>
+                  </li>
               </ul>
             </div>
+
             <div id="contacts" className="footer-elements-column-contacts">
               <h1>
                 {" "}
@@ -195,7 +203,7 @@ const Footer = () => {
               </h1>
               {contactInfo ? (
                 <>
-              <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`} dangerouslySetInnerHTML={{ __html: contactInfoPhone.phone_number}}></a>
+              <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`} >{contactInfoPhone.phone_number}</a>
               <a className="contact-mail" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
 </>) : ("Загрузка....")}
               <div className="footer-elements-contacts">
@@ -305,7 +313,7 @@ const Footer = () => {
                   ? "Navigation"
                   : "Навигация"}
               </h1>
-              <ul style={{ paddingTop: "43px" }}>
+              <ul >
                 <li>
                   <NavLink
                     to="/services"

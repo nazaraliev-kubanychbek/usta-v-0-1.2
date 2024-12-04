@@ -36,13 +36,17 @@ const BigBlocks = ({ URL }) => {
                     //head={block.title}
                     p={lang === "ru" ? block.description_ru : lang === "en" ? block.description_en : block.description_ky}
                     subhead={lang === "ru" ? block.title_ru : lang === "en" ? block.title_en : block.title_ky}
-                    btn="true"
+                    btn={block.see_more && block.url_button}
                     URL={block.url_button}
                     img1={block.sections[0]?.image}
                     img2={block.sections[1]?.image}
                     img3={block.sections[2]?.image}
                     img4={block.sections[3]?.image}
                     reversed={index % 2 === 1 ? "true" : "false"}
+                    see_more={block.see_more ? block.see_more: ''}
+                    see_more_ru={block.see_more_ru ? block.see_more: ''}
+                    see_more_en={block.see_more_en ? block.see_more: ''}
+                    see_more_ky={block.see_more_ky ? block.see_more: ''}
                 />
             ))}
         </div>

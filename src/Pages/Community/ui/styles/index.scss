@@ -12,8 +12,8 @@
     letter-spacing: -0.04em;
     text-align: left;
       text-transform: uppercase;
-    
-    
+
+
     margin-bottom: 30px;
   }
   .index-block-col {
@@ -24,13 +24,12 @@
   .index-block {
     margin-bottom: 50px;
     margin-top: 0px;
-    
-    
+
+
     &-logo {
         border: 2px solid #0000004D;
         padding: 18px;
-        margin-left: 15px;
-        border-radius: 50%; 
+        border-radius: 50%;
         width: 100px;
         height: 100px;
     }
@@ -42,25 +41,25 @@
         letter-spacing: -0.04em;
         text-align: left;
         width: 100px;
-        
+
     }
   }
 
   .index-block {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 20px; 
-    padding: 20px 0; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
   }
-  
+
   .index-block-col {
-    flex: 1 1 calc(25% - 20px); 
+    flex: 1 1 calc(25% - 20px);
     box-sizing: border-box;
-    text-align: center; 
+    text-align: center;
   }
-  
+
   @media (max-width: 992px) {
     .index-block-col {
       flex: 1 1 calc(50% - 20px);
@@ -75,24 +74,27 @@
     }
     .big-title {
       font-size: 30px;
-      line-height: 30px;      
+      line-height: 30px;
       margin-bottom: 30px;
   text-transform: uppercase;
 
     }
-    
+
   }
-  
+
   @media (max-width: 576px) {
     .big-title {
       font-size: 22px;
-      line-height: 22px;      
+      line-height: 22px;
       margin-bottom: 30px;
     }
     .index-block-col {
       flex: 1 1 100%;
       justify-content: center;
       text-align: center;
+    }
+    .index-block-logo{
+      margin-left: 0;
     }
   }
 
@@ -107,6 +109,9 @@
     .index-block-col {
       width: 110px;
     }
-    
-  }
+    .index-block-text{
+      font-size: 16px;
+      line-height: 100%;
+    }
 
+  }

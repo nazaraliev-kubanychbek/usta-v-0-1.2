@@ -67,6 +67,34 @@ function Membership() {
       </div>
 
       <div className="container">
+          <div className="page-main-text-block-mobile">
+            <h1 className='page-title-mobile'>
+              {advantagesBanner ? <>
+              {
+                lang === 'ru'
+                ? advantagesBanner.title
+                : lang === 'en'
+                ? advantagesBanner.title_en
+                : advantagesBanner.title_ky
+              }
+              </>: 'Загрузка...'}
+            </h1>
+
+            <p className='page-description-mobile'>
+              {advantagesBanner ?<>{
+                 lang === 'ru'
+                 ? advantagesBanner.description
+                 : lang === 'en'
+                 ? advantagesBanner.description_en
+                 : advantagesBanner.description_ky
+              }
+              </> : 'Загрузка данных...'
+              }
+            </p>
+          </div>
+        </div>
+
+      <div className="container">
 
               <section className="section">
 
