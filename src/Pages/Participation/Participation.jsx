@@ -4,12 +4,15 @@ import './Participation.scss';
 import { useSelector } from 'react-redux';
 import Slider from '../../Widgets/ui/Slider/Slider';
 import { URL_API } from '../../Futures/URLAPI';
+import { Link } from 'react-router-dom';
+
 function Participation() {
   const [projects, setProjects] = useState(null);
   const [awards, setAwards] = useState(null);
   const [mentoringPrograms, setMentoringPrograms] = useState([]);
   const lang = useSelector((state) => state.reducer.lang);
   const [textData, setTextData] = useState({});
+
 
   useEffect(() => {
     // Запросы к API
@@ -93,27 +96,37 @@ function Participation() {
          <div className="Participation-row-box">
           <div className="row">
             {Array.isArray(projects) && projects.length > 0 ? (
-              projects.map((project, index) => (
-                <div className="col-6" key={project.id}>
+              projects.map((project, index) => {
+                let title = lang === 'ru'
+                ? project.title
+                : lang === 'en'
+                ? project.title_en
+                : project.title_ky;
+                let description = lang === 'ru'
+                ? project.description
+                : lang === 'en'
+                ? project.description_en
+                : project.description_ky;
+              return <div className="col-6" key={project.id}>
+                  <Link to={`/participation/project/${project.id}`}>
                   <div className="Participation-project-card">
                     <img className="Participation-img" src={project.image} alt={project.title} />
                     <h3 className="Participation-project-card-title">
-                      {lang === 'ru'
-                        ? project.title
-                        : lang === 'en'
-                        ? project.title_en
-                        : project.title_ky}
+                      {title.length > 20
+                      ? title.substr(0, 17).trim() + '...'
+                      : title
+                      }
                     </h3>
                     <p className="Participation-project-card-text">
-                      {lang === 'ru'
-                        ? project.description
-                        : lang === 'en'
-                        ? project.description_en
-                        : project.description_ky}
+                    {description.length > 35
+                      ? description.substr(0, 32).trim() + '...'
+                      : description
+                      }
                     </p>
                   </div>
+                  </Link>
                 </div>
-              ))
+})
             ) : (
               <p>Загрузка проектов...</p>
             )}
@@ -132,7 +145,7 @@ function Participation() {
 
           <div className="Participation-awards">
             {Array.isArray(awards) && awards.length > 0 ? (
-              <Slider url={`api/v1/projects/awards/`  } list={[]}  />
+              <Slider url={`api/v1/projects/awards/`  } detail={true} detailUrl='/participation/awards' />
             ) : (
               <p>Загрузка наград...</p>
             )}

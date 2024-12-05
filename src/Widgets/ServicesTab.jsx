@@ -1,7 +1,6 @@
 ﻿import { useEffect, useState } from "react";
 import axios from 'axios';
 import { URL_API } from '../Futures/URLAPI';
-
 import { useSelector } from 'react-redux';
 
 const ServiceTab = ({ URL }) => {
@@ -35,10 +34,19 @@ const ServiceTab = ({ URL }) => {
                     <h1>{lang === "ru" ? "Услуги" : lang === "en" ? "Services" : "Кызматтар"}</h1>
                     <div className="Service-list">
                         {blocksData.map((block, index) => (
+
                             <div key={index} className="Service-list-service">
                                 <img src={block.image} />
-                                <p>{lang === "ru" ? block.title_ru : lang === "en" ? block.title_en : block.title_ky}</p>
+                                <p dangerouslySetInnerHTML={{
+                                    __html: lang === "ru"
+                                    ? block.title_ru
+                                    : lang === "en"
+                                    ? block.title_en
+                                     : block.title_ky
+                                }}></p>
                             </div>
+
+
                         ))}
                     </div>
                 </div>

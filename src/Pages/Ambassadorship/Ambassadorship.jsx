@@ -94,6 +94,20 @@ function Ambassadorship() {
               <AmbassadorServices />
             </section>
 
+            <div className="container">
+        <div className="ambassadorship-detail-download">
+                <a href={''} className="ambassadorship-detail-download-btn">
+                    {
+                        lang === 'ru'
+                        ? 'скачать коммерческое предложение'
+                        : lang === 'en'
+                        ? 'download commercial offer'
+                        : 'коммерциялык сунушту жүктөп алыңыз'
+                    }
+                </a>
+                </div>
+        </div>
+
             <section className="section">
               <AmbassadorList />
             </section>

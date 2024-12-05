@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Membership.scss';
 import { useSelector } from 'react-redux';
 import { URL_API } from '../../Futures/URLAPI';
+import Slider from '../../Widgets/ui/Slider/Slider';
 
 function Membership() {
   const [advantagesBanner, setAdvantagesBanner] = useState(null);
@@ -159,24 +160,8 @@ function Membership() {
 
         <section className="section">
         <h1 className='ctegory-text'>{lang === "ru" ? "КАТЕГОРИИ" : lang === "en" ? "CATEGORIES" : "КАТЕГОРИЯЛАР"}</h1>
-        <div className="scroll">
-          <div className="member-category">
-            {Array.isArray(categories) && categories.length > 0 ? (
-              categories.map((category, index) => (
-                <div key={index} className="category-item">
-                  <img src={category.image} alt={category.title} className={`category-img ${index === 0 ? 'selected' : ''}`} />
-                  <p className="category-label">{lang === 'ru'
-                        ? category.title
-                        : lang === 'en'
-                          ? category.title_en
-                          : category.title_ky}</p>
-                </div>
-              ))
-            ) : (
-              'Загрузка категорий...'
-            )}
-          </div>
-        </div>
+        <Slider url={'api/v1/advantage/category/'} detail={true} detailUrl='/membership/category' />
+
         </section>
 
           <section className="section">

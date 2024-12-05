@@ -113,7 +113,13 @@ font-size: 40px;
 font-weight: 700;
 line-height: 115%;
 letter-spacing: -0.04em;
+}
 
+.detail-page{
+    padding-top: 160px;
+    &-img{
+        width: 100%;
+    }
 }
 
 .row-gap-150{
@@ -144,11 +150,23 @@ letter-spacing: -0.04em;
     .section-title{
         font-size: 30px;
     }
+    .detail-page{
+        padding-top: 140px;
+    }
 }
 
 @media screen and (max-width: 992px) {
     .container {
         max-width: 720px
+    }
+    .detail-page{
+        padding-top: 100px;
+        .col-6{
+            width: 100%;
+        }
+    }
+    .col-3{
+        width: 50%;
     }
 
 }
@@ -161,6 +179,10 @@ letter-spacing: -0.04em;
     .page-main-text-block{
         width: 80%;
     }
+    .detail-page{
+        padding-top: 80px;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -170,6 +192,9 @@ letter-spacing: -0.04em;
     }
 
     .col-6 {
+        width: 100%;
+    }
+    .col-3{
         width: 100%;
     }
     .section-title{
@@ -205,5 +230,9 @@ letter-spacing: -0.04em;
     }
 .col-3{
     width: 100%;
+}
+
+.detail-page{
+    padding-top: 50px;
 }
 }

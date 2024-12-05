@@ -50,6 +50,7 @@ const Footer = () => {
     <div className="padding-top-50px">
       <div className="footer">
         <div className="container">
+
           <div className="footer-elements">
             <div className="footer-elements-column">
               <img className="footer-elements-logo" src={logo} alt="Logo" />
@@ -70,7 +71,7 @@ const Footer = () => {
                     onClick={scrollToTop}
                   >
                     {lang === "ru"
-                      ? "Главное"
+                      ? "Главная"
                       : lang === "en"
                       ? "Main Page"
                       : "Башкы бет"}
@@ -214,14 +215,14 @@ const Footer = () => {
                     alt="Instagram"
                   />
                 </a>
-                <a href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
                   <img
                     className="footer-elements-contacts-web"
                     src={youtube}
                     alt="YouTube"
                   />
                 </a>
-                <a href="https://t.me/usta_media">
+                <a href="https://t.me/usta_media" target="_blank">
                   <img
                     className="footer-elements-contacts-web"
                     src={telegram}
@@ -245,7 +246,7 @@ const Footer = () => {
                     onClick={scrollToTop}
                   >
                     {lang === "ru"
-                      ? "Главное"
+                      ? "Главная"
                       : lang === "en"
                       ? "Main Page"
                       : "Башкы бет"}
@@ -378,14 +379,14 @@ const Footer = () => {
                     alt="Instagram"
                   />
                 </a>
-                <a href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
                   <img
                     className="footer-elements-contacts-web"
                     src={youtube}
                     alt="YouTube"
                   />
                 </a>
-                <a href="https://t.me/usta_media">
+                <a href="https://t.me/usta_media" target="_blank">
                   <img
                     className="footer-elements-contacts-web"
                     src={telegram}
@@ -400,6 +401,180 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <div className="footer-mobile">
+            <div className="footer-mobile-top">
+              <img className="footer-elements-logo" src={logo} alt="Logo" />
+
+            </div>
+            <div className="footer-mobile-row">
+            <div className="footer-element-column-mobile">
+            <h1>
+                {lang === "ru"
+                  ? "Навигация"
+                  : lang === "en"
+                  ? "Navigation"
+                  : "Навигация"}
+              </h1>
+              <ul>
+                <li>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Главная"
+                      : lang === "en"
+                      ? "Main Page"
+                      : "Башкы бет"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/community"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "О Сообществе"
+                      : lang === "en"
+                      ? "About community"
+                      : "Коомчулук жөнүндө"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/events"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Мероприятия"
+                      : lang === "en"
+                      ? "Events"
+                      : "Маарекелер"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/membership"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Членство"
+                      : lang === "en"
+                      ? "Membership"
+                      : "Мүчөлүк"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/education"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Образование и сертификаты"
+                      : lang === "en"
+                      ? "Education and certification"
+                      : "Билим жана сертификаттар"}
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-element-column-mobile">
+            <h3 className="footer-transparent-title">-</h3>
+              <ul >
+                <li>
+                  <NavLink
+                    to="/services"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Услуги"
+                      : lang === "en"
+                      ? "Services"
+                      : "Кызматтар"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/ambassadorship"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Амбассадорство"
+                      : lang === "en"
+                      ? "Ambassadorship"
+                      : "Элчилик"}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/participation"
+                    className={({ isActive }) => (isActive ? "isActive" : "")}
+                    onClick={scrollToTop}
+                  >
+                    {lang === "ru"
+                      ? "Участие в проектах"
+                      : lang === "en"
+                      ? "Participation"
+                      : "Катышуу"}
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-element-column-mobile">
+              <h1>
+                {lang === "ru"
+                  ? "Контакты"
+                  : lang === "en"
+                  ? "Contacts"
+                  : "Байланыштар"}
+              </h1>
+              {contactInfo ? (
+                <>
+                <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`}>{contactInfoPhone.phone_number}</a>
+                <a className="contact-mail" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+</>) : ("Загрузка....")}
+            </div>
+            <div className="footer-element-column-mobile">
+              <div className="footer-elements-contacts">
+                <a target="_blank" href="https://www.instagram.com/usta_international/">
+                  <img
+                    className="footer-elements-contacts-web"
+                    src={insta}
+                    alt="Instagram"
+                  />
+                </a>
+                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                  <img
+                    className="footer-elements-contacts-web"
+                    src={youtube}
+                    alt="YouTube"
+                  />
+                </a>
+                <a href="https://t.me/usta_media" target="_blank">
+                  <img
+                    className="footer-elements-contacts-web"
+                    src={telegram}
+                    alt="Telegram"
+                  />
+                </a>
+                <img
+                  className="footer-elements-contacts-web"
+                  src={linkedIn}
+                  alt="LinkedIn"
+                />
+              </div>
+            </div>
+            </div>
+          </div>
+
           <div
             style={{
               width: "100%",
@@ -410,7 +585,7 @@ const Footer = () => {
               height: "auto",
             }}
           >
-            <a href="https://geeks.kg/geeks-pro">
+            <a target="_blank" href="https://geeks.kg/geeks-pro">
               <img src={BYGEEKSPRO} alt="BY GEEKS PRO" />
             </a>
           </div>

@@ -9,66 +9,19 @@ import Slider from './../../Widgets/ui/Slider/Slider';
 import ReactPlayer from 'react-player';
 
 const Events = () => {
-  const [events, setEvents] = useState([]);
-  const [keyEvents, setKeyEvents] = useState([]);
-  const [videoEvents, setVideoEvents] = useState([]);
-  const [photoEvents, setPhotoEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [eventText, setEventText] = useState({});
-  const [keyEventsTitle, setKeyEventsTitle] = useState('');
+
   const lang = useSelector((state) => state.reducer.lang);
   const [bannerData, setBannerData] = useState({});
   const [textData, setTextData] = useState({});
   const [eventList, setEventList] = useState([]);
   const [eventList2, setEventList2] = useState([]);
   const [eventList2Title, setEventList2Title] = useState([]);
-  const [videoList, setVideoList] = useState([])
+  const [videoList, setVideoList] = useState([]);
 
-  const apiUrls = {
-    Events: `${URL_API}api/v1/events/Events/`,
-    PhotoEvents: `${URL_API}api/v1/events/PhotoEvents/`,
-    KeyEventsTitle: `${URL_API}api/v1/events/KeyEventsTitle/`,
-    KeyEvents: `${URL_API}api/v1/events/KeyEvents/`,
-    VideoEvents: `${URL_API}api/v1/events/VideoEvents/`,
-  };
 
-  // Функция для загрузки данных
-  const fetchEventsData = async () => {
-    try {
-      setIsLoading(true);
 
-      const [
-        eventsResponse,
-        keyEventsTitleResponse,
-        keyEventsResponse,
-        videoEventsResponse,
-        photoEventsResponse,
-      ] = await Promise.all([
-        axios.get(apiUrls.Events),
-        axios.get(apiUrls.KeyEventsTitle),
-        axios.get(apiUrls.KeyEvents),
-        axios.get(apiUrls.VideoEvents),
-        axios.get(apiUrls.PhotoEvents),
-      ]);
-
-      setEvents(eventsResponse.data);
-      setKeyEventsTitle(keyEventsTitleResponse.data[0]);
-      setKeyEvents(keyEventsResponse.data);
-      setVideoEvents(videoEventsResponse.data);
-      setPhotoEvents(photoEventsResponse.data.slice(0, 4));
-
-      // Убедимся, что eventText становится объектом
-      setEventText(eventsResponse.data[0] || {});
-    } catch (err) {
-      setError(`Ошибка загрузки данных: ${err.message}`);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   useEffect(() => {
-    fetchEventsData();
 
       axios(`${URL_API}api/v1/events/BannerEvents/`)
       .then(({data})=> setBannerData(data[0]));
@@ -150,10 +103,12 @@ const Events = () => {
               }}
               ></p>
             </div>
-              <Slider url={''} list={eventList.map((item)=>{
+              <Slider
+              detail={true}
+              detailUrl={'/events/event'}
+              url={''} list={eventList.map((item)=>{
                 return {
                   ...item,
-                  image: item.banner,
                   description: item.title,
                   description_ru: item.title_ru,
                   description_en: item.title_en,
@@ -175,7 +130,7 @@ const Events = () => {
               ></h2>
             </div>
 
-            <Slider url={''} list={eventList2.map((item)=>{
+            <Slider detail={true} detailUrl='/events/significant_event' list={eventList2.map((item)=>{
                 return {
                   ...item,
                   image: item.banner,

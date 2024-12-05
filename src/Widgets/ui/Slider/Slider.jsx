@@ -5,9 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import img12 from './assets/Vector (2).png';
 import './styles/slider.scss';
 import { URL_API } from '../../../Futures/URLAPI';
+import { Link } from 'react-router-dom';
 
 
-const Slider = ({url, list}) => {
+const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = false}) => {
   const [slides, setSlides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,6 +22,7 @@ const Slider = ({url, list}) => {
       .then(response => {
         setSlides(response.data);
         setLoading(false);
+
       })
       .catch(() => {
         setError('Ошибка загрузки данных');
@@ -98,32 +100,78 @@ const Slider = ({url, list}) => {
           }}
         >
           {
-           slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="slide-item">
-                <img src={slide.image} alt={ list.length > 0
-                  ? ''
-                  : localizedDescription(slide)} />
-                {/* Удаляем HTML-теги из описания */}
-                {
-                  slide.date
-                  ? <p className="slide-item-date">
-                    {slide.date}
-                  </p>
-                  : ''
-                }
-                <p className="slide-item-p"
-                dangerouslySetInnerHTML={{__html:
+           slides.map((slide) => {
+
+            return <SwiperSlide key={slide.id}>
+            {
+              detail && detailUrl.length > 0
+              ? <Link
+              style={{
+                textDecoration: 'none',
+                color: '#000'
+              }}
+              to={`${detailUrl}/${slide.id}`}>
+               <div className="slide-item">
+              <img src={slide.image} alt={ list.length > 0
+                ? ''
+                : localizedDescription(slide)} />
+              {/* Удаляем HTML-теги из описания */}
+              {
+                member
+                ? <h4 dangerouslySetInnerHTML={{__html:
                   lang === 'ru'
-                  ? slide.description
+                  ? slide.title
                   : lang === 'en'
-                  ? slide.description_en
-                  : slide.description_ky
-                }}
-                ></p>
-              </div>
-            </SwiperSlide>
-          ))}
+                  ? slide.title_en
+                  : slide.title_ky
+                }}></h4>
+                : ''
+              }
+              {
+                slide.date
+                ? <p className="slide-item-date">
+                  {slide.date}
+                </p>
+                : ''
+              }
+              <p className="slide-item-p"
+              dangerouslySetInnerHTML={{__html:
+                lang === 'ru'
+                ? slide.description
+                : lang === 'en'
+                ? slide.description_en
+                : slide.description_ky
+              }}
+              ></p>
+            </div>
+              </Link>
+              :  <div className="slide-item">
+              <img src={slide.image} alt={ list.length > 0
+                ? ''
+                : localizedDescription(slide)} />
+              {/* Удаляем HTML-теги из описания */}
+              {
+                slide.date
+                ? <p className="slide-item-date">
+                  {slide.date}
+                </p>
+                : ''
+              }
+
+              <p className="slide-item-p"
+              dangerouslySetInnerHTML={{__html:
+                lang === 'ru'
+                ? slide.description
+                : lang === 'en'
+                ? slide.description_en
+                : slide.description_ky
+              }}
+              ></p>
+            </div>
+            }
+
+          </SwiperSlide>
+           })}
         </Swiper>
       </div>
 

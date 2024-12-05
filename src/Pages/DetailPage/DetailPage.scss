@@ -1,0 +1,29 @@
+.detail-page{
+
+    &-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        &-date{
+            color: gray;
+        }
+    }
+    &-img{
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .detail-page-img{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .detail-page-img{
+        height: auto;
+    }
+}

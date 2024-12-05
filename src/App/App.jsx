@@ -15,6 +15,93 @@ import './App.scss';
 import PropsCategoryDetails from '../Pages/Ambassadorship/CardPage/PropsCategoryDetails/PropsCategoryDetails';
 import CompanyDetail from '../Pages/Ambassadorship/CardPage/CompanyDetail/CompanyDetail';
 import AmbassadorCategory from '../Pages/Ambassadorship/AmbassadorCategory/AmbassadorCategory';
+import DetailPage from '../Pages/DetailPage/DetailPage';
+const detailPageList = [
+    {
+        id: '1',
+        url: 'api/v1/education/cards',
+        date: false,
+        path: '/education/detail/:id',
+        imageList: false,
+    },
+    {
+        id: '2',
+        url: 'api/v1/events/KeyEvents',
+        date: false,
+        path: '/events/significant_event/:id',
+        imageList: false,
+    },
+    {
+        id: '3',
+        url: 'api/v1/projects/projects',
+        date: false,
+        path: '/participation/project/:id',
+        imageList: false,
+    },
+    {
+        id: '4',
+        url: 'api/v1/events/PhotoEvents',
+        date: true,
+        path: '/events/event/:id',
+        imageList: false,
+    },
+    {
+        id: '5',
+        url: 'api/v1/education/cards',
+        date: false,
+        path: '/education/detail/:id',
+        imageList: false,
+    },
+    {
+        id: '6',
+        url: 'api/v1/base/teammember',
+        date: false,
+        path: '/member/:id',
+        imageList: false,
+    },
+    {
+        id: '7',
+        url: 'api/v1/advantage/category',
+        date: false,
+        path: '/membership/category/:id',
+        imageList: false,
+    },
+    {
+        id: '8',
+        url: 'api/v1/services/article',
+        date: false,
+        path: '/services/article/:id',
+        imageList: false,
+    },
+    {
+        id: '9',
+        date: false,
+        url: 'api/v1/projects/awards',
+        path: '/participation/awards/:id',
+        imageList: false,
+    },
+    {
+        id: '10',
+        date: false,
+        url: 'api/v1/community/image-info',
+        path: '/community/slider_1/:id',
+        imageList: false,
+    },
+    {
+        id: '11',
+        date: false,
+        url: 'api/v1/community/image-info-2',
+        path: '/community/slider_2/:id',
+        imageList: false,
+    },
+    {
+        id: '12',
+        date: false,
+        url: 'api/v1/base/section',
+        path: '/home/section/:id',
+        imageList: true,
+    },
+]
 
 function App() {
 
@@ -35,6 +122,15 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/news/:id" element={<News />} />
+                {
+                    detailPageList.map(item => {
+                        return <Route
+                        key={item.id}
+                        path={item.path}
+                        element={<DetailPage url={item.url} date={item.date} imageList={item.imageList} />}
+                        />
+                    })
+                }
             </Routes>
             <Footer />
         </BrowserRouter>

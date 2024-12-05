@@ -47,8 +47,21 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
               </div>
             )}
           </div>
-          <button className="Header-topline__options-btn">
-            Связаться с нами
+          <button className="Header-topline__options-btn"
+          style={{
+            border: 'none'
+          }}
+          >
+          <a href="https://t.me/usta_media" target="_blank" style={{
+            color: '#fff',
+            textDecoration: 'none'
+          }}>
+                  {lang === "ru"
+                      ? "Связаться с нами"
+                      : lang === "en"
+                      ? "Connect with us"
+                      : "Байланышу"}
+                      </a>
           </button>
         </div>
         <div className="header-mobile-burger-list">
@@ -64,7 +77,7 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
             to="/"
           >
             {lang === "ru"
-              ? "Главное"
+              ? "Главная"
               : lang === "en"
               ? "Main Page"
               : "Башкы бет"}

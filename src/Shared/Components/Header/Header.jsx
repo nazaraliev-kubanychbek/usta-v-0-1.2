@@ -127,11 +127,19 @@ function Header() {
                   )}
 
                   <div className="Header-topline__options-btn">
-                    {lang === "ru"
+                  <a href="https://t.me/usta_media" target="_blank"
+                  style={{
+                    color: '#fff',
+                    textDecoration: 'none'
+                  }}
+                  >
+                  {lang === "ru"
                       ? "Связаться с нами"
                       : lang === "en"
                       ? "Connect with us"
                       : "Байланышу"}
+                      </a>
+
                   </div>
                 </div>
               </div>
@@ -143,7 +151,7 @@ function Header() {
                       to="/"
                     >
                       {lang === "ru"
-                        ? "Главное"
+                        ? "Главная"
                         : lang === "en"
                         ? "Main Page"
                         : "Башкы бет"}
@@ -251,9 +259,12 @@ function Header() {
                 </ul>
               </nav>
               <div className="header-mobile">
+                <Link to={'/'}>
                 <div className="header-mobile-logo">
                   <img src={Logo} alt="Logo" />
                 </div>
+                </Link>
+
                 <button
                   className="header-burger-btn"
                   onClick={() => {
@@ -321,7 +332,18 @@ function Header() {
                     )}
 
                     <div className="Header-scrolled-topline__options-btn">
-                      Связаться с нами
+                    <a href="https://t.me/usta_media" target="_blank"
+                  style={{
+                    color: '#fff',
+                    textDecoration: 'none'
+                  }}
+                  >
+                  {lang === "ru"
+                      ? "Связаться с нами"
+                      : lang === "en"
+                      ? "Connect with us"
+                      : "Байланышу"}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -335,7 +357,7 @@ function Header() {
                         to="/"
                       >
                         {lang === "ru"
-                          ? "Главное"
+                          ? "Главная"
                           : lang === "en"
                           ? "Main Page"
                           : "Башкы бет"}

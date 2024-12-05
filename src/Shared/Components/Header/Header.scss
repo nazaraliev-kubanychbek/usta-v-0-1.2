@@ -423,7 +423,7 @@
         z-index: 100;
         background-color: #fff ;
         border-radius: 4px;
-        
+
         p{
             font-size: 22px;
         }
@@ -496,12 +496,15 @@
 
 @media screen and (max-width: 576px) {
     .Header {
-        width: 95%;
+        width: 100%;
+        border-radius: 0;
+        top: 0;
         display: block;
+        margin-top: 0;
     }
 
     .header-mobile {
-        width: 95%;
+        width: 100%;
     }
 
     .header-row {

@@ -1,9 +1,8 @@
 ﻿import "./Home.scss";
 import { useSelector } from "react-redux";
-
 import { useRef, useState, useEffect } from "react";
-
 import sliderIconRight from "./img/slider-right.svg";
+import { Link } from "react-router-dom";
 
 function Card({ type, img, date, text, pro, name }) {
   return (
@@ -116,7 +115,8 @@ function Slider({ name, cards = [] }) {
             }}
           >
             {cards.map((card, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={card.id}>
+                
                 {card.type == "news" ? (
                   <div onClick={() => handleCardClick(index)}>
                     <Card

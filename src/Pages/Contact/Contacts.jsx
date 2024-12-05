@@ -89,7 +89,7 @@ function Contacts() {
       </div>
       <section className="section">
       <div className="container">
-        <div className="Contact-list-label section-title">{lang === "ru" ? "ЧТОБЫ СВЯЗАТЬСЯ С НАМИ:" : lang === "en" ? "TO CONTACT US:" : "БИЗ БАЙЛАНЫШЫШ ҮЧҮН:" }</div>
+        <div className="Contact-list-label section-title">{lang === "ru" ? "КАК СВЯЗАТЬСЯ С НАМИ?" : lang === "en" ? "HOW TO CONTACT US?" : "БИЗ МЕНЕН КАНТИП БАЙЛАНЫШСА БОЛОТ?" }</div>
         <div className="Contact-list">
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">

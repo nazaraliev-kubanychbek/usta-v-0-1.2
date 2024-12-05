@@ -1,11 +1,11 @@
 import "./Services.scss";
-import InfoBlock from "../Home/Blocks/InfoBlock";
 import "../Home/Home.scss";
 import "../../Widgets/ui/scss/styles.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
+import { Link } from "react-router-dom";
 
 function Services() {
   const lang = useSelector((state) => state.reducer.lang);
@@ -124,6 +124,7 @@ function Services() {
           {servicesList.map((item, idx) => {
             return (
               <div
+              key={item.id}
                 className={
                   idx % 2 === 0
                     ? "row row-gap-60"
@@ -175,18 +176,26 @@ function Services() {
           <div className="services-card-scroll">
             <div className="Services-h1-imgs">
               {article.map((item, index) => (
-                <div className="Services-img-card" key={index}>
-                  <img
-                    className="Services-h1-imgs-img"
-                    src={item.image || "default-image-url"}
-                    alt={item.title || "Image"}
-                  />
-                  {/* Локализуем заголовок для каждого элемента статьи */}
-                  <p
-                    className="Services-h1-imgs-img-title"
-                    dangerouslySetInnerHTML={{ __html: localizedTitle(item) }}
-                  ></p>
-                </div>
+                <Link to={`/services/article/${item.id}`}
+               key={item.id}
+                style={{
+                  color: '#000',
+                  textDecoration: 'none',
+                }}
+                >
+                  <div className="Services-img-card" >
+                    <img
+                      className="Services-h1-imgs-img"
+                      src={item.image || "default-image-url"}
+                      alt={item.title || "Image"}
+                    />
+                    {/* Локализуем заголовок для каждого элемента статьи */}
+                    <p
+                      className="Services-h1-imgs-img-title"
+                      dangerouslySetInnerHTML={{ __html: localizedTitle(item) }}
+                    ></p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -200,6 +209,7 @@ function Services() {
           {servicesProgramList.map((item, idx) => {
             return (
               <div
+              key={item.id}
                 className={
                   idx % 2 === 0
                     ? "row row-gap-60"
@@ -238,7 +248,6 @@ function Services() {
             );
           })}
         </div>
-
       </section>
     </div>
   );

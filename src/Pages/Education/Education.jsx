@@ -4,6 +4,7 @@ import "./Education.scss";
 import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
+import { Link } from "react-router-dom";
 
 function Education() {
   const [educationData, setEducationData] = useState(null);
@@ -76,6 +77,7 @@ function Education() {
                   : "",
               }}
             />
+
             </div>
 
           </div>
@@ -151,6 +153,20 @@ function Education() {
                               : card.description_ky,
                         }}
                       />
+                      <Link to={`/education/detail/${card.id}`}
+                      style={{
+                        color: '#000'
+                      }}
+                      >
+                      {
+                        lang === "ru"
+                        ? 'подробнее'
+                        : lang === "en"
+                        ? 'more'
+                        : 'кененирээк'
+                      }
+                      </Link>
+
                     </div>
                   </div>
                 </div>
@@ -180,6 +196,19 @@ function Education() {
                               : card.description_ky,
                         }}
                       />
+                      <Link to={`/education/detail/${card.id}`}
+                      style={{
+                        color: '#000'
+                      }}
+                      >
+                      {
+                        lang === "ru"
+                        ? 'подробнее'
+                        : lang === "en"
+                        ? 'more'
+                        : 'кененирээк'
+                      }
+                      </Link>
                     </div>
                   </div>
                   <div className="col-6">
