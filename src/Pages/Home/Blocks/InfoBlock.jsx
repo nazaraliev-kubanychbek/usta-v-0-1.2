@@ -3,6 +3,7 @@ import axios from "axios";
 import { URL_API } from "../../../Futures/URLAPI";
 import { InfoBlock } from "../CardEvent";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const InfoBlocks = ({ URL, mode, btn, video }) => {
   const [infoBlockData, setInfoBlockData] = useState([]);
@@ -83,13 +84,13 @@ const InfoBlocks = ({ URL, mode, btn, video }) => {
                     />
                     {btn === "true" && (
                       <div className="InfoBlock-text-btn">
-                        <a href={block.url_button}>
+                        <Link to={block.url_button}>
                           {lang === "ru"
                             ? "Подробнее"
                             : lang === "en"
                             ? "See more"
                             : "көбүрөөк маалымат"}
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>

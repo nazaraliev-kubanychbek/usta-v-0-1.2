@@ -1,7 +1,6 @@
 ﻿import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.scss";
-import BigBlocks from "./Blocks/BigBlock";
 import InfoBlocks from "./Blocks/InfoBlock";
 import ServiceTab from "../../Widgets/ServicesTab";
 import { Slider } from "./CardEvent";
@@ -184,7 +183,6 @@ function Home() {
             );
           })}
         </div>
-        {/* <BigBlocks mode="json" URL="api/v1/base/section/" /> */}
       </section>
       <section className="section">
         <InfoBlocks mode="html" URL="api/v1/base/commonmodels/" btn="true" />
