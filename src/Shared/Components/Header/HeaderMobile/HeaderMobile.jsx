@@ -1,13 +1,13 @@
 ﻿import "../Header.scss";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { setLang, setSelectedCategory } from "../../../../Futures/reducers/reducer";
-import arrow from "../img/arrow.png";
+import { useState, useEffect } from "react";
+import { setLang, setSelectedCategory, getContacts } from "../../../../Futures/reducers/reducer";
+import arrow from "../img/arrow.svg";
 
 const HeaderMobile = ({ showBurger, setShowBurger }) => {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-
+  const contacts = useSelector(s => s.reducer.contacts);
 
   const dispatch = useDispatch();
   const lang = useSelector((s) => s.reducer.lang);
@@ -15,6 +15,9 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
   const toggleLanguageDropdown = () => {
     setIsLanguageDropdownOpen((prevState) => !prevState);
   };
+  useEffect(()=>{
+    dispatch(getContacts())
+  }, [])
   return (
     <div
       className={
@@ -23,7 +26,8 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
           : "header-mobile-burger"
       }
     >
-      <div className="header-mobile-burger-wrapper">
+      <div className="header-mobile-burger-wrapper"
+      >
         <div className="header-mobile-burger-top">
           <div>
             <p
@@ -52,7 +56,7 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
             border: 'none'
           }}
           >
-          <a href="https://t.me/usta_media" target="_blank" style={{
+          <a href={contacts.telegram} target="_blank" style={{
             color: '#fff',
             textDecoration: 'none'
           }}>
@@ -64,7 +68,7 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
                       </a>
           </button>
         </div>
-        <div className="header-mobile-burger-list">
+        <div className="header-mobile-burger-list" >
           <NavLink
             onClick={() => {
               setShowBurger(false);

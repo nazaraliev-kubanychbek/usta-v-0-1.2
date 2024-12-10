@@ -131,11 +131,11 @@
 
       &-card {
         padding-top: 40px;
-        width: 310px;
+        width: 100%;
         cursor: pointer;
 
         &__img {
-          width: 90%;
+          width: 100%;
           height: 240px;
           border-radius: 20px;
           object-fit: cover;
@@ -390,8 +390,8 @@
         align-items: center;
 
         img {
-          width: 56px;
-          height: 56px;
+          width: 100px;
+          height: 100px;
           display: flex;
         }
 
@@ -572,7 +572,6 @@
 
         &-card {
           padding-top: 40px;
-          width: 310px;
 
           &__img {
             height: 240px;
@@ -852,11 +851,6 @@
           align-items: center;
           width: 150px;
 
-          img {
-            width: 56px;
-            height: 56px;
-            display: flex;
-          }
 
           p {
             font-family: Helvetica;
@@ -1346,11 +1340,6 @@
           align-items: center;
           width: 150px;
 
-          img {
-            width: 56px;
-            height: 56px;
-            display: flex;
-          }
 
           p {
             font-family: Helvetica;
@@ -1595,6 +1584,7 @@
             line-height: 17.6px;
             letter-spacing: -0.04em;
             text-align: left;
+
           }
 
           &__pro {
@@ -1921,11 +1911,6 @@
           align-items: center;
           width: 230px;
 
-          img {
-            width: 56px;
-            height: 56px;
-            display: flex;
-          }
 
           p {
             font-family: Helvetica;

@@ -6,17 +6,17 @@ import burgerOpenIcon from "./img/burger-icon-open.svg";
 import burgerCloseIcon from "./img/burger-icon-close.svg";
 import HeaderMobile from "./HeaderMobile/HeaderMobile";
 import { useDispatch, useSelector } from "react-redux";
-import { setLang, setSelectedCategory } from "../../../Futures/reducers/reducer";
+import { setLang, setSelectedCategory, getContacts } from "../../../Futures/reducers/reducer";
 //import PopUp from './Float/PopUp'
 
-import arrow from "./img/arrow.png";
+import arrow from "./img/arrow.svg";
+import arrowScrolled from './img/darkArrow.svg';
 
-function Header() {
+function Header({detailPageList}) {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-
   const dispatch = useDispatch();
   const lang = useSelector((s) => s.reducer.lang);
-
+  const contacts = useSelector(s => s.reducer.contacts)
   const toggleLanguageDropdown = () => {
     setIsLanguageDropdownOpen((prevState) => !prevState);
   };
@@ -30,7 +30,9 @@ function Header() {
   const [showBurger, setShowBurger] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    const lastIndex = window.location.pathname.lastIndexOf('/');
+    const location = window.location.pathname.substring(0, lastIndex + 1);
+    if (location.includes('news') || window.scrollY > 50 || detailPageList.findIndex(item => item.path.includes(location)) > -1 && location.length > 1 ) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -58,6 +60,7 @@ function Header() {
   };
 
   useEffect(() => {
+    dispatch(getContacts())
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -66,6 +69,7 @@ function Header() {
 
   useEffect(() => {
     // Scroll to top on route change
+    handleScroll()
     window.scrollTo(0, 0);
   }, [location]);
 
@@ -89,8 +93,13 @@ function Header() {
                     onClick={toggleLanguageDropdown}
                   >
                     {lang.toUpperCase()}
+
                     <img
-                      src={arrow}
+                      src={
+                        scrolled
+                        ? arrowScrolled
+                        : arrow
+                      }
                       alt="arrow"
                       className={`arrow-icon ${
                         isLanguageDropdownOpen ? "rotated" : ""
@@ -127,7 +136,7 @@ function Header() {
                   )}
 
                   <div className="Header-topline__options-btn">
-                  <a href="https://t.me/usta_media" target="_blank"
+                  <a href={contacts.telegram} target="_blank"
                   style={{
                     color: '#fff',
                     textDecoration: 'none'
@@ -332,7 +341,7 @@ function Header() {
                     )}
 
                     <div className="Header-scrolled-topline__options-btn">
-                    <a href="https://t.me/usta_media" target="_blank"
+                    <a href={contacts.telegram} target="_blank"
                   style={{
                     color: '#fff',
                     textDecoration: 'none'

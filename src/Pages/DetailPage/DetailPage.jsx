@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { URL_API } from '../../Futures/URLAPI';
 import axios from 'axios';
+import Gallery from './Gallery';
 
 const DetailPage = ({url = '', date='', imageList=false}) => {
     const lang = useSelector(s => s.reducer.lang);
@@ -47,7 +48,7 @@ const DetailPage = ({url = '', date='', imageList=false}) => {
             <div className="container">
 
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-4">
                         {
                             imageList
                             ? <img src={data.sections[0].image} alt="" className="detail-page-img" />
@@ -55,7 +56,7 @@ const DetailPage = ({url = '', date='', imageList=false}) => {
                         }
 
                     </div>
-                    <div className="col-6">
+                    <div className="col-8">
                         <h2 className="section-title" dangerouslySetInnerHTML={{__html:
                              lang === 'ru'
                              ? (data.title || data.full_name)
@@ -78,17 +79,10 @@ const DetailPage = ({url = '', date='', imageList=false}) => {
                 <br />
                {
                 imageList
-                ?  <div className="row">
-                {
-                    data.sections.map(item =>{
-                        return <div className="col-3">
-                            <img key={item.id} src={item.image} alt="" className="detail-page-img" />
-                        </div>
-                    })
-                }
-            </div>
+                ? <Gallery imageList={data.sections} />
             : ''
                }
+
             </div>
         </section>
            }

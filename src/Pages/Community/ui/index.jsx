@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import axios from 'axios';
-import './styles/index.scss';
-import { URL_API } from '../../../Futures/URLAPI';
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import "./styles/index.scss";
+import { URL_API } from "../../../Futures/URLAPI";
+import Modal from "./Modal";
 
 const stripHTML = (htmlString) => {
-  const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+  const doc = new DOMParser().parseFromString(htmlString, "text/html");
   return doc.body.textContent || "";
 };
 
@@ -15,17 +16,23 @@ const localizedDescription = (contact, lang) => {
     en: contact.title_en,
     ky: contact.title_ky,
   };
-  return stripHTML(titles[lang] || titles.ky); // Возвращаем title для выбранного языка или для ky как fallback
+  return stripHTML(titles[lang] || titles.ky);
 };
 
 const Index = () => {
   const lang = useSelector((state) => state.reducer.lang);
   const [title, setTitle] = useState("Загрузка...");
   const [data, setData] = useState([]);
+  const [id, setId] = useState(0);
+  const [modal, setModal] = useState(false);
+  const toggleModal = (id) => {
+    setModal(!modal);
+    setId(id);
+  };
 
   useEffect(() => {
     Promise.all([
-      axios.get(`${URL_API}api/v1/community/titel/`),
+      axios.get(`${URL_API}api/v1/community/title/`),
       axios.get(`${URL_API}api/v1/community/important-contacts/`),
     ])
       .then(([titleResponse, contactsResponse]) => {
@@ -35,9 +42,9 @@ const Index = () => {
         if (titleData) {
           const titleKey = `title_contacts_${lang}`;
           setTitle(
-            titleData[titleKey] 
-            ? stripHTML(titleData[titleKey]) 
-            : stripHTML(titleData.title_contacts_ky) // Fallback на русский язык
+            titleData[titleKey]
+              ? stripHTML(titleData[titleKey])
+              : stripHTML(titleData.title_contacts_ky) // Fallback на русский язык
           );
         } else {
           setTitle("Заголовок не найден");
@@ -58,19 +65,27 @@ const Index = () => {
         <div className="row index-block">
           {data.length > 0 ? (
             data.map((contact, index) => (
-              <div key={index} className="col-3 index-block-col">
+              <div
+                key={contact.id}
+                className="col-3 index-block-col"
+                onClick={() => toggleModal(contact.id)}
+                style={{ cursor: "pointer" }}
+              >
                 <img
                   src={contact.image}
                   alt={localizedDescription(contact, lang)}
                   className="index-block-logo"
                 />
-                <p className="index-block-text">{localizedDescription(contact, lang)}</p>
+                <p className="index-block-text">
+                  {localizedDescription(contact, lang)}
+                </p>
               </div>
             ))
           ) : (
             <p>Контакты не найдены.</p>
           )}
         </div>
+        <Modal toggleModal={toggleModal} id={id} modal={modal} />
       </div>
     </div>
   );

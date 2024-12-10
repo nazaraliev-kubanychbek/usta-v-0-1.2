@@ -124,3 +124,9 @@
     // }
 
   }
+
+  @media (max-width: 570px) {
+    .slide-item img{
+      width: 100%;
+    }
+  }

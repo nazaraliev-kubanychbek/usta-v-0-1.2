@@ -101,16 +101,23 @@ const detailPageList = [
         path: '/home/section/:id',
         imageList: true,
     },
+    {
+        id: '13',
+        date: false,
+        url: 'api/v1/community/partners',
+        path: '/community/partner/:id',
+        imageList: false,
+    },
 ]
 
 function App() {
 
     return (
         <BrowserRouter>
-            <Header />
+            <Header detailPageList={detailPageList} />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path="/ambassadorship" element={<Ambassadorship />} />
+                <Route path="/ambassadorship" element={<Ambassadorship/>} />
                 <Route path="/ambassadorship/category/:id" element={<AmbassadorCategory />} />
                 <Route path='/requisites' element={<PropsCategoryDetails/>} />
                 <Route path='/ambassadorship/company/:id' element={<CompanyDetail/>} />

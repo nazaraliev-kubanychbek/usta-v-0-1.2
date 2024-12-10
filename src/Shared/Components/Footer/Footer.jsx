@@ -24,6 +24,7 @@ const Footer = () => {
   const [contactInfo, setContactInfo] = useState([]);
   const [contactInfoPhone, setContactInfoPhone] = useState([]);
   const dispatch = useDispatch();
+  const contacts = useSelector(s => s.reducer.contacts);
 
   useEffect(() => {
     axios
@@ -204,36 +205,39 @@ const Footer = () => {
               </h1>
               {contactInfo ? (
                 <>
-              <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`} >{contactInfoPhone.phone_number}</a>
-              <a className="contact-mail" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              <a className="contact-tel" href={`tel:${contacts.phone_number}`} >{contacts.phone_number}</a>
+              <a className="contact-mail" href={`mailto:${contacts.email}`}>{contacts.email}</a>
 </>) : ("Загрузка....")}
               <div className="footer-elements-contacts">
-                <a href="https://www.instagram.com/usta_international/">
+                <a href={contacts.instagram} target="_blank">
                   <img
                     className="footer-elements-contacts-web"
-                    src={insta}
+                    src={contacts.instagram_image}
                     alt="Instagram"
                   />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                <a target="_blank" href={contacts.youtube}>
                   <img
                     className="footer-elements-contacts-web"
-                    src={youtube}
+                    src={contacts.youtube_image}
                     alt="YouTube"
                   />
                 </a>
-                <a href="https://t.me/usta_media" target="_blank">
+                <a href={contacts.telegram} target="_blank">
                   <img
                     className="footer-elements-contacts-web"
-                    src={telegram}
+                    src={contacts.telegram_image}
                     alt="Telegram"
                   />
                 </a>
+                <a href={contacts.linkedin} target="_blank">
                 <img
                   className="footer-elements-contacts-web"
-                  src={linkedIn}
+                  src={contacts.linkedin_image}
                   alt="LinkedIn"
                 />
+                </a>
+
               </div>
             </div>
             <div className="footer-element-column-mobile">

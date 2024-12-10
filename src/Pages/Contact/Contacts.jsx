@@ -7,6 +7,7 @@ import { URL_API } from "../../Futures/URLAPI";
 
 function Contacts() {
   const lang = useSelector((s) => s.reducer.lang);
+  const contacts = useSelector(s => s.reducer.contacts);
   const [mail, setMail] = useState([]);
   const [banner, setBanner] = useState([]);
   const [address, setAddress] = useState([]);
@@ -89,11 +90,19 @@ function Contacts() {
       </div>
       <section className="section">
       <div className="container">
-        <div className="Contact-list-label section-title">{lang === "ru" ? "КАК СВЯЗАТЬСЯ С НАМИ?" : lang === "en" ? "HOW TO CONTACT US?" : "БИЗ МЕНЕН КАНТИП БАЙЛАНЫШСА БОЛОТ?" }</div>
+        <div className="Contact-list-label section-title"
+        dangerouslySetInnerHTML={{
+          __html : lang === 'ru'
+          ? contacts.title
+          : lang === 'en'
+          ? contacts.title_en
+          : contacts.title_ky
+        }}
+        ></div>
         <div className="Contact-list">
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
-              <img src={mail.icon} />
+              <img src={contacts.email_image} />
             </div>
 
             <div className="Contact-list-block__text">
@@ -102,32 +111,32 @@ function Contacts() {
                 color: '#000',
                 textDecoration: 'none'
               }}
-              href={`mailto: ${mail.email}`}>{mail.email}</a>
+              href={`mailto: ${contacts.email}`}>{contacts.email}</a>
             </div>
           </div>
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
-              <img src={phone.icon} />
+              <img src={contacts.phone_number_image} />
             </div>
 
-            <div className="Contact-list-block__text" dangerouslySetInnerHTML={{__html: phone.phone_number}}></div>
+            <div className="Contact-list-block__text">
+              <a href={`tel: ${contacts.phone_number}`}
+              style={{
+                color: '#000',
+                textDecoration: 'none'
+              }}
+              >{contacts.phone_number}</a>
+            </div>
           </div>
           <div className="Contact-list-block">
             <div className="Contact-list-block__img">
-              <img src={address.icon} />
+              <img src={contacts.address_image} />
             </div>
 
             <div
               className="Contact-list-block__text"
-              dangerouslySetInnerHTML={{
-                __html:
-                  lang === "ru"
-                    ? address.address
-                    : lang === "en"
-                    ? address.address_en
-                    : address.address_ky,
-              }}
-            ></div>
+           
+            >{contacts.address}</div>
           </div>
         </div>
       </div>

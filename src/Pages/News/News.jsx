@@ -69,6 +69,7 @@ const News = () => {
             </div>
             </div>
             <Slider name={lang === "ru" ? "Новости" : lang === "en" ? "News" : "Жаңылыктар"} cards={cardDataNews} />
+            <br />
         </div>
     );
 };

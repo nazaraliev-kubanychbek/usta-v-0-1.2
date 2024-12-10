@@ -19,7 +19,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffffff;
+    background-color: transparent;
     backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
@@ -29,10 +29,11 @@
     transition: 0.5s;
     animation: slideDown 0.5s ease-out;
 
+
     nav {
         display: flex;
         justify-content: center;
-        border-top: #00000080 solid 1px;
+        border-top: #BC2B2B solid 1px;
         padding: 13px 67px;
         width: 100%;
 
@@ -43,7 +44,7 @@
             letter-spacing: -0.04em;
             text-decoration: solid;
             text-decoration: underline;
-            color: #000000;
+            color: #FFF;
         }
 
         ul {
@@ -61,7 +62,7 @@
                     font-size: 16px;
                     text-decoration: none;
                     font-weight: lighter;
-                    color: #00000080;
+                    color: #fff;
                     font-family: Helvetica;
                     background-color: transparent;
                     border: none;
@@ -92,7 +93,7 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                color: #000 ;
+                color: #fff ;
 
                 .arrow-icon {
                     margin-left: 5px;
@@ -235,7 +236,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-
+            color: #000;
             .arrow-icon {
                 transition: transform 0.3s ease;
             }
@@ -259,7 +260,6 @@
                 margin: 0;
                 padding: 10px;
                 cursor: pointer;
-
                 &:hover {
                     background-color: #f0f0f0;
                 }
@@ -395,6 +395,7 @@
         align-items: center;
         width: 540px;
         padding: 18px 22px;
+        background-color: #fff;
     }
 
     .header-mobile-logo img {

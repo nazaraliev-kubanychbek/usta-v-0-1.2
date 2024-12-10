@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { URL_API } from "../../../Futures/URLAPI";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const PartnerSlider = () => {
   const [data, setData] = useState([]);
@@ -42,11 +43,13 @@ const PartnerSlider = () => {
         {data.map((item) => {
           return (
             <SwiperSlide key={item.id}>
+              <Link to={`/community/partner/${item.id}`}>
               <div className="partner-slide-item-wrapper">
                 <div className="partner-slide-item">
                   <img src={item.image} alt="" />
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
           );
         })}

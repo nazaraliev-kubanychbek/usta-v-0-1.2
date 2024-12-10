@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
-import './Community.scss';
-import Index from './ui/index';
-import { URL_API } from '../../Futures/URLAPI';
-import PartnerSlider from '../../Widgets/ui/PartnerSlider/PartnerSlider';
-import Slider from '../../Widgets/ui/Slider/Slider';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import "./Community.scss";
+import Index from "./ui/index";
+import { URL_API } from "../../Futures/URLAPI";
+import PartnerSlider from "../../Widgets/ui/PartnerSlider/PartnerSlider";
+import Slider from "../../Widgets/ui/Slider/Slider";
 
 const stripHTML = (htmlString) => {
-  const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+  const doc = new DOMParser().parseFromString(htmlString, "text/html");
   return doc.body.textContent || "";
 };
 
@@ -50,31 +50,38 @@ function Community() {
         </div>
       </div>
 
-    <div className="container">
-    <div className="page-main-text-block-mobile">
-            <h1 className=" page-title-mobile">
-              {getLocalizedText(communityData, lang, "title")}
-            </h1>
-            <p className=" page-description-mobile">
-              {getLocalizedText(communityData, lang, "description")}
-            </p>
-          </div>
-    </div>
+      <div className="container">
+        <div className="page-main-text-block-mobile">
+          <h1 className=" page-title-mobile">
+            {getLocalizedText(communityData, lang, "title")}
+          </h1>
+          <p className=" page-description-mobile">
+            {getLocalizedText(communityData, lang, "description")}
+          </p>
+        </div>
+      </div>
 
       <div className="container">
-        <section className='section'>
-        <Slider url='api/v1/community/image-info/' detail={true} detailUrl='/community/slider_1' />
+        <section className="section">
+          <Slider
+            url="api/v1/community/image-info/"
+            detail={true}
+            detailUrl="/community/slider_1"
+          />
         </section>
-        <section className='section'>
-        <Slider url='api/v1/community/image-info-2/' detail={true} detailUrl='/community/slider_2' />
+        <section className="section">
+          <Slider
+            url="api/v1/community/image-info-2/"
+            detail={true}
+            detailUrl="/community/slider_2"
+          />
         </section>
-        <section className='section'>
-        <PartnerSlider />
+        <section className="section">
+          <PartnerSlider />
         </section>
-        <section className='section'>
-        <Index />
+        <section className="section">
+          <Index />
         </section>
-
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = f
       setLoading(false)
 
     }
-  }, [list, url]);
+  }, []);
 
   const slideLeft = () => {
     if (swiperRef.current) {
@@ -176,13 +176,13 @@ const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = f
       </div>
 
       <div className="dots-container">
-        {Array(Math.ceil(slides.length / 4))
+        {Array(Math.ceil(slides.length / 4) < 3 ? 3 : Math.ceil(slides.length / 4))
           .fill(0)
           .map((_, dotIndex) => (
             <div
               key={dotIndex}
               className={`dot ${currentIndex >= dotIndex * 4 && currentIndex < (dotIndex + 1) * 4 ? 'active' : ''}`}
-              onClick={() => swiperRef.current && swiperRef.current.slideToLoop(dotIndex * 4)}
+              onClick={() => swiperRef.current && swiperRef.current.slideToLoop(dotIndex * 2)}
             />
           ))}
       </div>
