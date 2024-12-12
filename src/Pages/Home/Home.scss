@@ -1397,6 +1397,7 @@
   }
 }
 
+
 @media screen and (max-width: 576px) {
   .home-section-block-text{
     min-height: 300px;
@@ -1558,7 +1559,7 @@
           flex-direction: column;
           padding-top: 40px;
           width: 310px;
-
+          margin: 0 auto;
           &__img {
             width: 310px;
             height: 240px;
