@@ -67,7 +67,7 @@ const AmbassadorServices = () => {
                       }}
                       ></p>
                     </div>
-                    <img
+                    {/* <img
                       src={arrow}
                       alt=""
                       className={
@@ -75,7 +75,7 @@ const AmbassadorServices = () => {
                           ? "service-detail-menu-item-open-arrow service-detail-menu-item-open-arrow-reverse"
                           : "service-detail-menu-item-open-arrow"
                       }
-                    />
+                    /> */}
                   </div>
 
                   <p

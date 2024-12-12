@@ -25,8 +25,15 @@ const HeaderMobile = ({ showBurger, setShowBurger }) => {
           ? "header-mobile-burger header-mobile-burger-show"
           : "header-mobile-burger"
       }
+      onClick={()=>{
+        setShowBurger(false)
+      }}
     >
-      <div className="header-mobile-burger-wrapper"
+      <div
+      onClick={e =>{
+        e.stopPropagation()
+      }}
+      className="header-mobile-burger-wrapper"
       >
         <div className="header-mobile-burger-top">
           <div>

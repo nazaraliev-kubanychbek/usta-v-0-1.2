@@ -16,12 +16,10 @@ const Modal = ({ toggleModal, modal, id }) => {
   const lang = useSelector((state) => state.reducer.lang);
   const { 0: data, 1: setData } = useState({});
   useEffect(() => {
-    console.log(id);
-
     axios
-      .get(`${URL_API}api/v1/community/important-contacts/${id}/`)
-      .then(({ data }) => setData(data))
-      .catch((e) => console.error(e));
+    .get(`${URL_API}api/v1/community/important-contacts/${id}/`)
+    .then(({ data }) => setData(data))
+    .catch((e) => console.error(e));
   }, [id]);
 
   return (

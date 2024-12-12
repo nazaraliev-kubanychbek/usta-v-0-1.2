@@ -6,6 +6,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { URL_API } from "../../Futures/URLAPI";
 import { Link } from "react-router-dom";
+import Slider from './../../Widgets/ui/Slider/Slider';
 
 function Services() {
   const lang = useSelector((state) => state.reducer.lang);
@@ -172,34 +173,9 @@ function Services() {
             dangerouslySetInnerHTML={{ __html: localizedTitle(titles) }}
           ></h1>
 
-          {/* Articles API */}
-          <div className="services-card-scroll">
-            <div className="Services-h1-imgs">
-              {article.map((item, index) => (
-                <Link to={`/services/article/${item.id}`}
-               key={item.id}
-                style={{
-                  color: '#000',
-                  textDecoration: 'none',
-                }}
-                >
-                  <div className="Services-img-card" >
-                    <img
-                      className="Services-h1-imgs-img"
-                      src={item.image || "default-image-url"}
-                      alt={item.title || "Image"}
-                    />
-                    {/* Локализуем заголовок для каждого элемента статьи */}
-                    <p
-                      className="Services-h1-imgs-img-title"
-                      dangerouslySetInnerHTML={{ __html: localizedTitle(item) }}
-                    ></p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
 
+          {/* Articles API */}
+          <Slider list={article} detail={true} detailUrl="/services/article" />
           {/* Articles API */}
         </div>
       </section>

@@ -10,6 +10,7 @@ import AmbassadorList from './AmbassadorList/AmbassadorList';
 function Ambassadorship() {
   const lang = useSelector((s) => s.reducer.lang);
   const [data, setData] = useState([]);
+  const [commercial, setCommercial] = useState({});
 
   useEffect(() => {
     axios
@@ -20,8 +21,8 @@ function Ambassadorship() {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-
-
+      axios(`${URL_API}api/v1/ambassadorship/usta-commercial-offer/`)
+      .then(({data})=> setCommercial(data[0]));
   });
 
   return (
@@ -96,7 +97,7 @@ function Ambassadorship() {
 
             <div className="container">
         <div className="ambassadorship-detail-download">
-                <a href={''} className="ambassadorship-detail-download-btn">
+                <a href={commercial.pdf_file} className="ambassadorship-detail-download-btn">
                     {
                         lang === 'ru'
                         ? 'скачать коммерческое предложение'

@@ -85,7 +85,12 @@ const Index = () => {
             <p>Контакты не найдены.</p>
           )}
         </div>
-        <Modal toggleModal={toggleModal} id={id} modal={modal} />
+        {
+          modal
+          ? <Modal toggleModal={toggleModal} id={id} modal={modal} />
+          : ''
+        }
+
       </div>
     </div>
   );

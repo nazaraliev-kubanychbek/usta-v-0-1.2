@@ -6,6 +6,7 @@ import burgerMenuOpen from "./img/burger-icon-open.svg";
 import { setSelectedCategory } from "../../../Futures/reducers/reducer";
 import propIcon from "./img/documents.svg";
 import servicesIcon from "./img/services.svg";
+import commercialIcon from './img/commercialIcon.svg';
 import { useNavigate } from "react-router-dom";
 
 const CategoryBlock = () => {
@@ -22,10 +23,6 @@ const CategoryBlock = () => {
       }
     );
   }, []);
-  // useEffect(()=>{
-  //   document.querySelector('.ambassador-category-menu-bg')
-  //   .style.height = document.body.scrollHeight
-  // }, [showMenu])
 
   return (
    <>
@@ -41,8 +38,6 @@ const CategoryBlock = () => {
         <button
           onClick={() => {
             setShowMenu(!showMenu);
-
-
           }}
           className="ambassador-category-menu-head-btn"
         >
@@ -53,7 +48,7 @@ const CategoryBlock = () => {
         style={
           showMenu
             ? {
-                height: `${60 * (categoryData.length + 2 )}px`,
+                height: `${60 * (categoryData.length + 3 )}px`,
                 opacity: 1,
               }
             : {}
@@ -129,6 +124,27 @@ const CategoryBlock = () => {
             </div>
           );
         })}
+         <div
+          className="ambassador-category-menu-list-item"
+          onClick={() => {
+            setShowMenu(false);
+            dispatch(setSelectedCategory("all"));
+            navigate('/ambassadorship');
+          }}
+        >
+          <img
+            src={commercialIcon}
+            alt=""
+            className="ambassador-category-menu-list-item-icon"
+          />
+          <p className="ambassador-category-menu-list-item-text">
+            {lang === "ru"
+              ? "Коммерческие предложения"
+              : lang === "en"
+              ? "Commercial offers"
+              : "Коммерциялык сунуштар"}
+          </p>
+        </div>
       </div>
     </div>
 

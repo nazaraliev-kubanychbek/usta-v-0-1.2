@@ -1,15 +1,8 @@
 import logo from "../../Images/logo.svg";
 import "./footer.scss";
-import React, { useEffect, useState } from "react";
-import { URL_API } from "../../../Futures/URLAPI";
-import insta from "../../Images/social/instagram.png";
-import linkedIn from "../../Images/social/linkedin.png";
-import telegram from "../../Images/social/telegram.png";
-import youtube from "../../Images/social/YouTube.png";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import BYGEEKSPRO from "../../Images/BY GEEKS PRO.png";
-import axios from "axios";
 import { setSelectedCategory } from "../../../Futures/reducers/reducer";
 
 const scrollToTop = () => {
@@ -21,31 +14,10 @@ const scrollToTop = () => {
 
 const Footer = () => {
   const lang = useSelector((s) => s.reducer.lang);
-  const [contactInfo, setContactInfo] = useState([]);
-  const [contactInfoPhone, setContactInfoPhone] = useState([]);
   const dispatch = useDispatch();
   const contacts = useSelector(s => s.reducer.contacts);
 
-  useEffect(() => {
-    axios
-      .get(`${URL_API}api/v1/contacts/emails/`)
-      .then((response) => {
-        setContactInfo(response.data[0]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .get(`${URL_API}api/v1/contacts/contacts/`)
-      .then((response) => {
-        setContactInfoPhone(response.data[0]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+
 
   return (
     <div className="padding-top-50px">
@@ -203,7 +175,7 @@ const Footer = () => {
                   ? "Contacts"
                   : "Байланыштар"}
               </h1>
-              {contactInfo ? (
+              {contacts ? (
                 <>
               <a className="contact-tel" href={`tel:${contacts.phone_number}`} >{contacts.phone_number}</a>
               <a className="contact-mail" href={`mailto:${contacts.email}`}>{contacts.email}</a>
@@ -368,40 +340,42 @@ const Footer = () => {
                   ? "Contacts"
                   : "Байланыштар"}
               </h1>
-              {contactInfo ? (
+              {contacts ? (
                 <>
-                <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`}>{contactInfoPhone.phone_number}</a>
-                <a className="contact-mail" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                <a className="contact-tel" href={`tel:${contacts.phone_number}`}>{contacts.phone_number}</a>
+                <a className="contact-mail" href={`mailto:${contacts.email}`}>{contacts.email}</a>
 </>) : ("Загрузка....")}
             </div>
             <div className="footer-element-column-mobile">
               <div className="footer-elements-contacts">
-                <a href="https://www.instagram.com/usta_international/">
+                <a href={contacts.instagram}>
                   <img
                     className="footer-elements-contacts-web"
-                    src={insta}
+                    src={contacts.instagram_image}
                     alt="Instagram"
                   />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                <a target="_blank" href={contacts.youtube}>
                   <img
                     className="footer-elements-contacts-web"
-                    src={youtube}
+                    src={contacts.youtube_image}
                     alt="YouTube"
                   />
                 </a>
-                <a href="https://t.me/usta_media" target="_blank">
+                <a href={contacts.telegram} target="_blank">
                   <img
                     className="footer-elements-contacts-web"
-                    src={telegram}
+                    src={contacts.telegram_image}
                     alt="Telegram"
                   />
                 </a>
-                <img
-                  className="footer-elements-contacts-web"
-                  src={linkedIn}
-                  alt="LinkedIn"
-                />
+                <a href={contacts.linkedin} target="_blank">
+                  <img
+                    className="footer-elements-contacts-web"
+                    src={contacts.linkedin_image}
+                    alt="Linkedin"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -540,40 +514,42 @@ const Footer = () => {
                   ? "Contacts"
                   : "Байланыштар"}
               </h1>
-              {contactInfo ? (
+              {contacts ? (
                 <>
-                <a className="contact-tel" href={`tel:${contactInfoPhone.phone_number}`}>{contactInfoPhone.phone_number}</a>
-                <a className="contact-mail" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                <a className="contact-tel" href={`tel:${contacts.phone_number}`}>{contacts.phone_number}</a>
+                <a className="contact-mail" href={`mailto:${contacts.email}`}>{contacts.email}</a>
 </>) : ("Загрузка....")}
             </div>
             <div className="footer-element-column-mobile">
               <div className="footer-elements-contacts">
-                <a target="_blank" href="https://www.instagram.com/usta_international/">
+                <a target="_blank" href={contacts.instagram}>
                   <img
                     className="footer-elements-contacts-web"
-                    src={insta}
+                    src={contacts.instagram_image}
                     alt="Instagram"
                   />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=_LTyF2adV_8&list=PLr-7qpmyaPYyWxZRjb9NcXDh64hLS_6wA">
+                <a target="_blank" href={contacts.youtube}>
                   <img
                     className="footer-elements-contacts-web"
-                    src={youtube}
+                    src={contacts.youtube_image}
                     alt="YouTube"
                   />
                 </a>
-                <a href="https://t.me/usta_media" target="_blank">
+                <a href={contacts.telegram} target="_blank">
                   <img
                     className="footer-elements-contacts-web"
-                    src={telegram}
+                    src={contacts.telegram_image}
                     alt="Telegram"
                   />
                 </a>
-                <img
-                  className="footer-elements-contacts-web"
-                  src={linkedIn}
-                  alt="LinkedIn"
-                />
+                <a href={contacts.linkedin} target="_blank">
+                  <img
+                    className="footer-elements-contacts-web"
+                    src={contacts.linkedin_image}
+                    alt="Linkedin"
+                  />
+                </a>
               </div>
             </div>
             </div>

@@ -31,9 +31,13 @@ const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = f
     } else {
       setSlides(list)
       setLoading(false)
-
     }
   }, []);
+useEffect(()=>{
+  if(list.length > 0){
+    setSlides(list)
+  }
+},[list])
 
   const slideLeft = () => {
     if (swiperRef.current) {
@@ -116,17 +120,14 @@ const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = f
                 ? ''
                 : localizedDescription(slide)} />
               {/* Удаляем HTML-теги из описания */}
-              {
-                member
-                ? <h4 dangerouslySetInnerHTML={{__html:
+             <h4 dangerouslySetInnerHTML={{__html:
                   lang === 'ru'
                   ? slide.title
                   : lang === 'en'
                   ? slide.title_en
                   : slide.title_ky
                 }}></h4>
-                : ''
-              }
+             
               {
                 slide.date
                 ? <p className="slide-item-date">
@@ -134,15 +135,19 @@ const Slider = ({url = '', list = [], detail = false, detailUrl = '', member = f
                 </p>
                 : ''
               }
-              <p className="slide-item-p"
-              dangerouslySetInnerHTML={{__html:
-                lang === 'ru'
-                ? slide.description
-                : lang === 'en'
-                ? slide.description_en
-                : slide.description_ky
-              }}
-              ></p>
+              {
+                member
+                ? <p className="slide-item-p"
+                dangerouslySetInnerHTML={{__html:
+                  lang === 'ru'
+                  ? slide.description
+                  : lang === 'en'
+                  ? slide.description_en
+                  : slide.description_ky
+                }}
+                ></p>
+                : ''
+              }
             </div>
               </Link>
               :  <div className="slide-item">
