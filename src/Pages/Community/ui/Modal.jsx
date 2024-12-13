@@ -27,7 +27,7 @@ const Modal = ({ toggleModal, modal, id }) => {
       className={modal ? "modal modal__active" : "modal"}
       onClick={toggleModal}
     >
-      <div className="modal__dialog" onClick={(e) => e.preventDefault()}>
+      <div className="modal__dialog" onClick={(e) => e.stopPropagation()}>
         <h5 className="modal__dialog-title"
         dangerouslySetInnerHTML={{
           __html:
@@ -52,11 +52,17 @@ const Modal = ({ toggleModal, modal, id }) => {
           </li>
           <li>
             <img src={data.phone_number_image} alt="" />
-            <p>{data.phone_number}</p>
+            <a style={{
+              textDecoration: 'none',
+              color: '#000'
+            }} href={`tel: ${data.phone_number}`}>{data.phone_number}</a>
           </li>
           <li>
             <img src={data.email_image} alt="" />
-            <p>{data.email}</p>
+            <a style={{
+              textDecoration: 'none',
+              color: '#000'
+            }} href={`mailto: ${data.email}`}>{data.email}</a>
           </li>
         </ul>
       </div>

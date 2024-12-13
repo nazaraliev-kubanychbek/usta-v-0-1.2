@@ -48,14 +48,14 @@ const CategoryBlock = () => {
         style={
           showMenu
             ? {
-                height: `${60 * (categoryData.length + 3 )}px`,
+                height: `${60 * (categoryData.length + 2 )}px`,
                 opacity: 1,
               }
             : {}
         }
         className="ambassador-category-menu-list"
       >
-        <div
+        {/* <div
           className="ambassador-category-menu-list-item"
           onClick={() => {
             setShowMenu(false);
@@ -75,7 +75,7 @@ const CategoryBlock = () => {
               ? "Requisites"
               : "Реквизиттер"}
           </p>
-        </div>
+        </div> */}
 
         <div
           className="ambassador-category-menu-list-item"

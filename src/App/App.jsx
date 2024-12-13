@@ -119,7 +119,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path="/ambassadorship" element={<Ambassadorship/>} />
                 <Route path="/ambassadorship/category/:id" element={<AmbassadorCategory />} />
-                <Route path='/requisites' element={<PropsCategoryDetails/>} />
+                {/* <Route path='/requisites' element={<PropsCategoryDetails/>} /> */}
                 <Route path='/ambassadorship/company/:id' element={<CompanyDetail/>} />
                 <Route path="/community" element={<Community />} />
                 <Route path="/education" element={<Education />} />

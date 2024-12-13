@@ -491,9 +491,12 @@ function Header({detailPageList}) {
                 </nav>
               </div>
               <div className="header-mobile">
+                <Link to={'/'}>
                 <div className="header-mobile-logo">
                   <img src={Logo} alt="Logo" />
                 </div>
+                </Link>
+
                 <button
                   className="header-burger-btn"
                   onClick={() => {

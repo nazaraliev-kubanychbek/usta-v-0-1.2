@@ -4,7 +4,7 @@ import { URL_API } from "../../../../Futures/URLAPI";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Slider from "../../../../Widgets/ui/Slider/Slider";
+import CompanySlider from "./CompanySlider";
 import AmbassadorList from "../../AmbassadorList/AmbassadorList";
 import { setSelectedCategory } from "../../../../Futures/reducers/reducer";
 import { useParams } from "react-router-dom";
@@ -166,7 +166,7 @@ const CompanyDetail = () => {
           {/* Слайды начало */}
 
             <section className="section">
-            <Slider url={""} list={data.ambassador_images} />
+            <CompanySlider list={data.ambassador_images} />
             </section>
 
           {/* Слайды конец */}
